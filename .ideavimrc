@@ -1,0 +1,156 @@
+let mapleader=" "
+
+nnoremap \e :e  ~/.ideavimrc<CR>
+nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
+
+map Q gq
+noremap <SPACE> <Nop>
+
+filetype on
+filetype plugin on
+filetype indent on
+set matchit
+set keep-english-in-normal-and-restore-in-insert
+set commentary
+set surround
+Plug 'dbakker/vim-paragraph-motion'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'kana/vim-textobj-entire'
+
+set modeline
+set modelines=12
+set relativenumber
+set number
+set scrolloff=5
+set ideamarks
+set ideajoin
+set idearefactormode=keep
+
+set encoding = 'utf-8'
+set fileencoding = 'utf-8'
+set fileformat = 'unix'
+
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
+set infercase
+set wildignorecase
+set nocompatible
+
+set breakindent
+set autoindent
+set smartindent
+
+set expandtab
+set smarttab
+
+set clipboard+=unnamed
+set clipboard+=ideaput
+
+map H _
+map L $
+
+map <C-d> <C-e><C-e><C-e><C-e>
+map <C-u> <C-y><C-y><C-y><C-y>
+map <C-j> jj
+map <C-k> kk
+
+map [m <Action>(MethodUp)
+map ]m <Action>(MethodDown)
+map g; <Action>(JumpToLastChange)
+map g, <Action>(JumpToNextChange)
+
+map zc <Action>(CollapseRegion)
+map zo <Action>(ExpandRegion)
+map zC <Action>(CollapseAllRegions)
+map zO <Action>(ExpandAllRegions)
+
+map <BS><BS> :noh<CR>
+map ,<CR> :noh<CR>
+
+map <C-n> <Down>
+map <C-p> <Up>
+
+map ,z <Action>(ToggleDistractionFreeMode)
+map <C-h> <Action>(PreviousTab)
+map <C-l> <Action>(NextTab)
+map <C-w> <Action>(CloseContent)
+map <leader>bo <Action>(CloseAllEditorsButActive)
+map <leader>bl <Action>(CloseAllToTheLeft)
+map <leader>br <Action>(CloseAllToTheRight)
+
+map <leader>tc <Action>(ActivateTerminalToolWindow)
+
+map sv <Action>(SplitVertically)
+map sh <Action>(SplitHorizontally)
+map sc <Action>(Unsplit)
+map so <Action>(UnsplitAll)
+
+nnoremap <leader>k <C-w>k
+nnoremap <leader>j <C-w>j
+nnoremap <leader>h <C-w>h
+nnoremap <leader>l <C-W>l
+
+map <C-p> <Action>(GotoFile)
+map <C-f> <Action>(FindInPath)
+
+map <C-i> <Action>(Forward)
+map <C-o> <Action>(Back)
+
+map gd <Action>(GotoDeclaration)
+map gD <Action>(GotoTypeDeclaration)
+map gh <Action>(QuickJavaDoc)
+map gH <Action>(QuickAction)
+map gi <Action>(GotoImplementation)
+map gu <Action>(GotoSuperMethod)
+map gr <Action>(ShowUsages)
+map ga <Action>(ShowIntentionActions)
+map gn <Action>(Generate)
+
+nnoremap == :action ReformatCode<CR>
+nnoremap -- :action OptimizeImports <CR>
+nnoremap <leader>rn :action RenameElement<CR>
+vmap <leader>rm :action RefactoringMenu<CR>
+
+map sn <Action>(GotoNextError)
+map sp <Action>(GotoPreviousError)
+map ]s <Action>(GotoNextError)
+map [s <Action>(GotoPreviousError)
+
+map gt <Action>(GotoTest)
+
+nnoremap zd :action Debug<CR>
+
+nmap zc :action Resume<CR>
+nmap ze :action Stop<CR>
+nmap zj :action StepOver<CR>
+nmap zi :action StepInto<CR>
+nmap zo :action StepOut<CR>
+nmap zt <Action>(ToggleLineBreakpoint)
+
+nnoremap <leader>p :action SelectInProjectView<CR>
+
+Plug 'nerdtree'
+nnoremap <leader>m :NERDTree<CR>
+nnoremap <Tab> :NERDTree<CR>
+
+Plug 'vim-scripts/argtextobj.vim'
+let g:argtextobj_pairs="(:),{:},<:>"
+
+set which-key
+let g:WhichKey_FontSize = 16
+set notimeout
+
+Plug 'machakann/vim-highlightedyank'
+let g:highlightedyank_highlight_duration = "600"
+
+Plug 'easymotion/vim-easymotion'
+map f <Plug>(easymotion-f)
+map F <Plug>(easymotion-F)
+map t <Plug>(easymotion-t)
+map T <Plug>(easymotion-T)
+map gj <Plug>(easymotion-j)
+map gk <Plug>(easymotion-k)
+map gw <Plug>(easymotion-w)
+map gb <Plug>(easymotion-b)

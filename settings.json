@@ -1,5 +1,10 @@
 {
-
+    "remote.SSH.remotePlatform": {
+        "10.0.0.2": "linux"
+    },
+    "security.allowedUNCHosts": [
+        "10.0.0.2"
+    ],
     "workbench.startupEditor": "none",
     "window.zoomLevel": 1,
     "files.autoSave": "afterDelay",
@@ -41,6 +46,16 @@
     "vim.statusBarColors.easymotioninputmode": "#007ACC",
     "vim.statusBarColors.surroundinputmode": "#007ACC",
     "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<leader>",
+                "z",
+            ],
+            "commands": [
+                "workbench.action.toggleZenMode"
+            ],
+            "when": "!isAuxiliaryWindowFocusedContext"
+        },
         {
             "before": [
                 "=",
@@ -319,7 +334,8 @@
             ],
             "commands": [
                 "workbench.action.terminal.toggleTerminal"
-            ]
+            ],
+            "when": "terminal.active"
         },
         {
             "before": [
@@ -681,5 +697,6 @@
         "statusBar.debuggingBackground": "#8FBCBB",
         "statusBar.foreground": "#434C5E",
         "statusBar.debuggingForeground": "#434C5E"
-    }
+    },
+    "maven.executable.path": "D:\\Program\\apache-maven-3.9.9\\bin\\mvn.cmd"
 }

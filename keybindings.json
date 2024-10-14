@@ -22,6 +22,16 @@
         "when": "sideBarFocus && !inputFocus"
     },
     {
+        "key": "ctrl+h",
+        "command": "workbench.action.previousPanelView",
+        "when": "focusedView =~ 'workbench.panel.*'"    
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.nextPanelView",
+        "when": "focusedView =~ 'workbench.panel.*'"    
+    },
+    {
         "key": "ctrl+n",
         "command": "quickInput.next",
         "when": "inQuickInput && quickInputType == 'quickPick'",
@@ -144,4 +154,14 @@
         },
         "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !inputFocus && explorerResourceIsFolder"
     },
+    // {
+        // "key": "g p",
+        // "command": "workbench.actions.view.problems",
+        // "when": "workbench.panel.markers.view.active"
+    // },
+    {
+        "key": "g p",
+        "command": "workbench.action.togglePanel",
+        "when": "editorTextFocus!inputFocus"
+    }
 ]

@@ -162,6 +162,6 @@
     {
         "key": "g p",
         "command": "workbench.action.togglePanel",
-        "when": "editorTextFocus!inputFocus"
+        "when": "editorTextFocus || !inputFocus"
     }
 ]

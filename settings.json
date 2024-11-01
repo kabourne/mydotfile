@@ -726,12 +726,12 @@
     "vim.insertModeKeyBindingsNonRecursive": [
         {
             "before": [
-                "<C-j>",
+                "<C-n>",
             ],
             "commands": [
                 "editor.action.triggerSuggest"
             ],
-            "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
+            "when": "!inlineSuggestionVisible && editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
         },
     ],
     "vim.operatorPendingModeKeyBindingsNonRecursive": [
@@ -753,9 +753,9 @@
         }
     ],
     "workbench.colorCustomizations": {
-        "statusBar.background": "#8FBCBB",
-        "statusBar.noFolderBackground": "#8FBCBB",
-        "statusBar.debuggingBackground": "#8FBCBB",
+        "statusBar.background": "#B48EAD",
+        "statusBar.noFolderBackground": "#B48EAD",
+        "statusBar.debuggingBackground": "#B48EAD",
         "statusBar.foreground": "#434C5E",
         "statusBar.debuggingForeground": "#434C5E"
     },

@@ -68,6 +68,16 @@
     },
     {
         "key": "ctrl+n",
+        "command": "codeium.showNextCompletion",
+        "when": "inlineSuggestionVisible && !editorReadonly",
+    },
+    {
+        "key": "ctrl+p",
+        "command": "codeium.showPreviousCompletion",
+        "when": "inlineSuggestionVisible && !editorReadonly",
+    },
+    {
+        "key": "ctrl+n",
         "command": "quickInput.next",
         "when": "inQuickInput && quickInputType == 'quickPick'",
     },

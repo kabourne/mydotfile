@@ -1,16 +1,16 @@
-    "workbench.startupEditor": "none",
-    "editor.smoothScrolling": true,
-    "editor.cursorBlinking": "solid",
-    "editor.cursorSmoothCaretAnimation": "on",
-    "workbench.list.smoothScrolling": true,
-    "editor.minimap.enabled": false,
     "extensions.experimental.affinity": {
         "vscodevim.vim": 1
     },
-    "editor.insertSpaces": true,
+    "workbench.startupEditor": "none",
+    "workbench.list.smoothScrolling": true,
     "workbench.colorTheme": "Default Dark+",
     "window.zoomLevel": 1,
     "files.autoSave": "afterDelay",
+    "editor.smoothScrolling": true,
+    "editor.cursorBlinking": "solid",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.minimap.enabled": false,
+    "editor.insertSpaces": true,
     "vim.mouseSelectionGoesIntoVisualMode": false,
     // "vim.autoSwitchInputMethod.enable": true,
     // "vim.autoSwitchInputMethod.defaultIM": "com.apple.keylayout.ABC",
@@ -261,9 +261,9 @@
                 "p",
             ],
             "commands": [
-                "",
+                "codeium.openChatInPane",
             ],
-            "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+            "when": "codeium.commandEnabled && editorTextFocus && !inlineSuggestionsVisible"
         },
         {
             "before": [
@@ -272,9 +272,22 @@
                 "h",
             ],
             "commands": [
-                "github.copilot.chat.fix",
+                // "github.copilot.chat.fix",
+                "codeium.explainProblem"
             ],
-            "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+            "when": "textInputFocus && !editorReadonly"
+        },
+        {
+            "before": [
+                "<leader>",
+                "c",
+                "m",
+            ],
+            "commands": [
+                // "github.copilot.terminal.generateCommitMessage"
+                "codeium.generateCommitMessage"
+            ],
+            "when": "editorTextFocus"
         },
         {
             "before": [
@@ -348,17 +361,6 @@
             ],
             "commands": [
                 "editor.action.showHover"
-            ],
-            "when": "editorTextFocus"
-        },
-        {
-            "before": [
-                "<leader>",
-                "c",
-                "m",
-            ],
-            "commands": [
-                "github.copilot.terminal.generateCommitMessage"
             ],
             "when": "editorTextFocus"
         },
@@ -689,7 +691,8 @@
                 "c",
             ],
             "commands": [
-                "github.copilot.chat.explain",
+                // "github.copilot.chat.explain",
+                "codeium.explainCodeBlock",
             ],
         },
         {
@@ -750,9 +753,9 @@
         }
     ],
     "workbench.colorCustomizations": {
-        "statusBar.background": "#B48EAD",
-        "statusBar.noFolderBackground": "#B48EAD",
-        "statusBar.debuggingBackground": "#B48EAD",
+        "statusBar.background": "#8FBCBB",
+        "statusBar.noFolderBackground": "#8FBCBB",
+        "statusBar.debuggingBackground": "#8FBCBB",
         "statusBar.foreground": "#434C5E",
         "statusBar.debuggingForeground": "#434C5E"
     },

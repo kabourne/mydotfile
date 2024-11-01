@@ -1,14 +1,24 @@
     "workbench.startupEditor": "none",
+    "editor.smoothScrolling": true,
+    "editor.cursorBlinking": "solid",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "workbench.list.smoothScrolling": true,
+    "editor.minimap.enabled": false,
+    "extensions.experimental.affinity": {
+        "vscodevim.vim": 1
+    },
+    "editor.insertSpaces": true,
+    "workbench.colorTheme": "Default Dark+",
     "window.zoomLevel": 1,
     "files.autoSave": "afterDelay",
     "vim.mouseSelectionGoesIntoVisualMode": false,
-    "vim.autoSwitchInputMethod.enable": true,
+    // "vim.autoSwitchInputMethod.enable": true,
     // "vim.autoSwitchInputMethod.defaultIM": "com.apple.keylayout.ABC",
     // "vim.autoSwitchInputMethod.obtainIMCmd": "/usr/local/bin/im-select",
     // "vim.autoSwitchInputMethod.switchIMCmd": "/usr/local/bin/im-select {im}",
-    "vim.autoSwitchInputMethod.defaultIM": "1033",
-    "vim.autoSwitchInputMethod.obtainIMCmd": "D:\\Program\\im-select.exe",
-    "vim.autoSwitchInputMethod.switchIMCmd": "D:\\Program\\im-select.exe {im}",
+    // "vim.autoSwitchInputMethod.defaultIM": "1033",
+    // "vim.autoSwitchInputMethod.obtainIMCmd": "D:\\Program\\im-select.exe",
+    // "vim.autoSwitchInputMethod.switchIMCmd": "D:\\Program\\im-select.exe {im}",
     "vim.sneak": false,
     "vim.easymotion": true,
     "vim.incsearch": true,
@@ -39,6 +49,16 @@
     "vim.statusBarColors.easymotioninputmode": "#007ACC",
     "vim.statusBarColors.surroundinputmode": "#007ACC",
     "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "g",
+                "p",
+            ],
+            "commands": [
+                "workbench.action.togglePanel"
+            ],
+            "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+        },
         {
             "before": [
                 "<leader>",
@@ -236,6 +256,28 @@
         },
         {
             "before": [
+                "<leader>",
+                "c",
+                "p",
+            ],
+            "commands": [
+                "",
+            ],
+            "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+        },
+        {
+            "before": [
+                "<leader>",
+                "c",
+                "h",
+            ],
+            "commands": [
+                "github.copilot.chat.fix",
+            ],
+            "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+        },
+        {
+            "before": [
                 "g",
                 "a",
             ],
@@ -312,12 +354,24 @@
         {
             "before": [
                 "<leader>",
+                "c",
+                "m",
+            ],
+            "commands": [
+                "github.copilot.terminal.generateCommitMessage"
+            ],
+            "when": "editorTextFocus"
+        },
+        {
+            "before": [
+                "<leader>",
                 "r",
                 "n",
             ],
             "commands": [
                 "editor.action.rename"
-            ]
+            ],
+            "when": "editorTextFocus"
         },
         {
             "before": [
@@ -334,7 +388,7 @@
             "before": [
                 "<C-p>",
             ],
-            "after": [
+            "commands": [
                 "workbench.action.quickOpen",
             ],
             "when": "editorTextFocus || !inputFocus"
@@ -344,7 +398,8 @@
                 "<C-f>",
             ],
             "commands": [
-                "workbench.view.search"
+                // "workbench.view.search",
+                "workbench.action.quickTextSearch",
             ]
         },
         {
@@ -627,6 +682,16 @@
         },
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<leader>",
+                "c",
+                "c",
+            ],
+            "commands": [
+                "github.copilot.chat.explain",
+            ],
+        },
         {
             "before": [
                 ">"

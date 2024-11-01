@@ -46,15 +46,20 @@
         "command": "workbench.action.previousSideBarView",
         "when": "sideBarFocus"
     },
+    // {
+    //     "key": "g p",
+    //     "command": "workbench.action.togglePanel",
+    //     "when": "focusedView == 'workbench.panel.comments' || focusedView == 'workbench.panel.testResults.view' || focusedView =~ /.*port.*/ || focusedView =~ /^gitlens\\.views.*/ || focusedView == 'workbench.panel.markers.view' || focusedView == 'workbench.panel.output' || focusedView == 'workbench.panel.repl.view' || focusedView == 'terminal'"
+    // },
     {
         "key": "ctrl+h",
         "command": "workbench.action.previousPanelView",
-        "when": "focusedView =~ /.*ports.*/ || focusedView =~ /^gitlens\\.views.*/ || focusedView == 'workbench.panel.markers.view' || focusedView == 'workbench.panel.output' || focusedView == 'workbench.panel.repl.view' || focusedView == 'terminal'"
+        "when": "focusedView == 'workbench.panel.comments' || focusedView == 'workbench.panel.testResults.view' || focusedView =~ /.*port.*/ || focusedView =~ /^gitlens\\.views.*/ || focusedView == 'workbench.panel.markers.view' || focusedView == 'workbench.panel.output' || focusedView == 'workbench.panel.repl.view' || focusedView == 'terminal'"
     },
     {
         "key": "ctrl+l",
         "command": "workbench.action.nextPanelView",
-        "when": "focusedView =~ /.*ports.*/ || focusedView =~ /^gitlens\\.views.*/ || focusedView == 'workbench.panel.markers.view' || focusedView == 'workbench.panel.output' || focusedView == 'workbench.panel.repl.view' || focusedView == 'terminal'"
+        "when": "focusedView == 'workbench.panel.comments' || focusedView == 'workbench.panel.testResults.view' || focusedView =~ /.*port.*/ || focusedView =~ /^gitlens\\.views.*/ || focusedView == 'workbench.panel.markers.view' || focusedView == 'workbench.panel.output' || focusedView == 'workbench.panel.repl.view' || focusedView == 'terminal'"
     },
     {
         "key": "ctrl+n",
@@ -88,13 +93,23 @@
     },
     {
         "key": "ctrl+n",
-        "command": "selectNextCodeAction",
-        "when": "codeActionMenuVisible"
+        "command": "focusNextRenameSuggestion",
+        "when": "renameInputVisible"
     },
     {
         "key": "ctrl+p",
-        "command": "selectPrevCodeAction",
-        "when": "codeActionMenuVisible"
+        "command": "focusPreviousRenameSuggestion",
+        "when": "renameInputVisible"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "selectPrevSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
     },
     {
         "key": "a",
@@ -171,12 +186,7 @@
     {
         "key": "o",
         "command": "explorer.openAndPassFocus",
-        "when": "listFocus && !inputFocus && !treestickyScrollFocused"
-    },
-    {
-        "key": "o",
-        "command": "list.toggleExpand",
-        "when": "listFocus && !inputFocus && !treestickyScrollFocused"
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsFolder && !inputFocus"
     },
     {
         "key": "backspace",
@@ -200,11 +210,6 @@
         "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !inputFocus && explorerResourceIsFolder"
     },
     {
-        "key": "g p",
-        "command": "workbench.action.togglePanel",
-        "when": "focusedView == 'workbench.panel.markers.view' || focusedView == 'workbench.panel.output' || focusedView == 'workbench.panel.repl.view' || focusedView == 'terminal'"
-    },
-    {
         "key": "space",
         "command": "-list.toggleExpand",
         "when": "listFocus && !inputFocus && !treestickyScrollFocused"
@@ -218,6 +223,11 @@
         "key": "h",
         "command": "-list.collapse",
         "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "enter",
+        "command": "-renameFile",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
     },
     {
         "key": "l",

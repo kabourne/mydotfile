@@ -1,5 +1,10 @@
 [
     {
+        "key": "space l",
+        "command": "workbench.action.navigateRight",
+        "when": "filesExplorerFocus && foldersViewVisible && !inputFocus"
+    },
+    {
         "key": "tab",
         "command": "runCommands",
         "args": {
@@ -22,14 +27,44 @@
         "when": "sideBarFocus && !inputFocus"
     },
     {
+        "key": "cmd+k",
+        // "key": "ctrl+k",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.scm.focus",
+            ]
+        },
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.nextSideBarView",
+        "when": "sideBarFocus"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.previousSideBarView",
+        "when": "sideBarFocus"
+    },
+    {
         "key": "ctrl+h",
         "command": "workbench.action.previousPanelView",
-        "when": "focusedView =~ 'workbench.panel.*'"    
+        "when": "focusedView =~ /.*ports.*/ || focusedView =~ /^gitlens\\.views.*/ || focusedView == 'workbench.panel.markers.view' || focusedView == 'workbench.panel.output' || focusedView == 'workbench.panel.repl.view' || focusedView == 'terminal'"
     },
     {
         "key": "ctrl+l",
         "command": "workbench.action.nextPanelView",
-        "when": "focusedView =~ 'workbench.panel.*'"    
+        "when": "focusedView =~ /.*ports.*/ || focusedView =~ /^gitlens\\.views.*/ || focusedView == 'workbench.panel.markers.view' || focusedView == 'workbench.panel.output' || focusedView == 'workbench.panel.repl.view' || focusedView == 'terminal'"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "github.copilot.nextPanelSolution",
+        "when": "github.copilot.activated && github.copilot.panelVisible && activeWebviewPanelId == 'GitHub Copilot Suggestions'",
+    },
+    {
+        "key": "ctrl+p",
+        "command": "github.copilot.previousPanelSolution",
+        "when": "github.copilot.activated && github.copilot.panelVisible && activeWebviewPanelId == 'GitHub Copilot Suggestions'",
     },
     {
         "key": "ctrl+n",
@@ -126,12 +161,12 @@
     {
         "key": "o",
         "command": "explorer.openAndPassFocus",
-        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceIsFolder && !inputFocus"
+        "when": "listFocus && !inputFocus && !treestickyScrollFocused"
     },
     {
         "key": "o",
         "command": "list.toggleExpand",
-        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && explorerResourceIsFolder && !inputFocus"
+        "when": "listFocus && !inputFocus && !treestickyScrollFocused"
     },
     {
         "key": "backspace",
@@ -154,14 +189,29 @@
         },
         "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !inputFocus && explorerResourceIsFolder"
     },
-    // {
-        // "key": "g p",
-        // "command": "workbench.actions.view.problems",
-        // "when": "workbench.panel.markers.view.active"
-    // },
     {
         "key": "g p",
         "command": "workbench.action.togglePanel",
-        "when": "editorTextFocus || !inputFocus"
+        "when": "focusedView == 'workbench.panel.markers.view' || focusedView == 'workbench.panel.output' || focusedView == 'workbench.panel.repl.view' || focusedView == 'terminal'"
+    },
+    {
+        "key": "space",
+        "command": "-list.toggleExpand",
+        "when": "listFocus && !inputFocus && !treestickyScrollFocused"
+    },
+    {
+        "key": "space",
+        "command": "-filesExplorer.openFilePreserveFocus",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsFolder && !inputFocus"
+    },
+    {
+        "key": "h",
+        "command": "-list.collapse",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "l",
+        "command": "-list.select",
+        "when": "listFocus && !inputFocus"
     }
 ]

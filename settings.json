@@ -72,6 +72,24 @@
         {
             "before": [
                 "=",
+            ],
+            "commands": [
+                "editor.action.smartSelect.expand"
+            ],
+            "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+        },
+        {
+            "before": [
+                "-",
+            ],
+            "commands": [
+                "editor.action.smartSelect.shrink"
+            ],
+            "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+        },
+        {
+            "before": [
+                "=",
                 "=",
             ],
             "commands": [
@@ -261,33 +279,9 @@
                 "p",
             ],
             "commands": [
-                "codeium.openChatInPane",
+                "",
             ],
-            "when": "codeium.commandEnabled && editorTextFocus && !inlineSuggestionsVisible"
-        },
-        {
-            "before": [
-                "<leader>",
-                "c",
-                "h",
-            ],
-            "commands": [
-                // "github.copilot.chat.fix",
-                "codeium.explainProblem"
-            ],
-            "when": "textInputFocus && !editorReadonly"
-        },
-        {
-            "before": [
-                "<leader>",
-                "c",
-                "m",
-            ],
-            "commands": [
-                // "github.copilot.terminal.generateCommitMessage"
-                "codeium.generateCommitMessage"
-            ],
-            "when": "editorTextFocus"
+            "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
         },
         {
             "before": [
@@ -317,7 +311,8 @@
                 "d",
             ],
             "commands": [
-                "editor.action.revealDefinition"
+                "editor.action.goToDeclaration",
+                // "editor.action.revealDefinitionAside"
             ],
             "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
         },
@@ -328,7 +323,7 @@
             ],
             "commands": [
                 "editor.action.goToTypeDefinition",
-                "explorer.openAndPassFocus"
+                // "explorer.openAndPassFocus"
             ],
             "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
         },
@@ -367,6 +362,17 @@
         {
             "before": [
                 "<leader>",
+                "c",
+                "m",
+            ],
+            "commands": [
+                "github.copilot.terminal.generateCommitMessage"
+            ],
+            "when": "editorTextFocus"
+        },
+        {
+            "before": [
+                "<leader>",
                 "r",
                 "n",
             ],
@@ -395,7 +401,7 @@
             ],
             "when": "editorTextFocus || !inputFocus"
         },
-        {
+       {
             "before": [
                 "<C-f>",
             ],
@@ -688,11 +694,21 @@
             "before": [
                 "<leader>",
                 "c",
+                "h",
+            ],
+            "commands": [
+                "github.copilot.chat.fix",
+            ],
+            "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+        },
+        {
+            "before": [
+                "<leader>",
+                "c",
                 "c",
             ],
             "commands": [
-                // "github.copilot.chat.explain",
-                "codeium.explainCodeBlock",
+                "github.copilot.chat.explain",
             ],
         },
         {
@@ -731,7 +747,16 @@
             "commands": [
                 "editor.action.triggerSuggest"
             ],
-            "when": "!inlineSuggestionVisible && editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
+            "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
+        },
+        {
+            "before": [
+                "<C-j>",
+            ],
+            "commands": [
+                "editor.action.inlineSuggest.trigger"
+            ],
+            "when": "config.github.copilot.inlineSuggest.enable && editorTextFocus && !editorHasSelection && !inlineSuggestionsVisible"
         },
     ],
     "vim.operatorPendingModeKeyBindingsNonRecursive": [

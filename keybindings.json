@@ -15,6 +15,16 @@
         },
         "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus) && !sideBarFocus"
     },
+        {
+        "key": "ctrl+m",
+        "command": "workbench.action.togglePanel",
+        "when": "focusedView == 'workbench.panel.comments' || focusedView == 'workbench.panel.testResults.view' || focusedView =~ /.*port.*/ || focusedView =~ /^gitlens\\.views.*/ || focusedView == 'workbench.panel.markers.view' || focusedView == 'workbench.panel.output' || focusedView == 'workbench.panel.repl.view' || focusedView == 'terminal'"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.terminal.new",
+        "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+    },
     {
         "key": "tab",
         "command": "runCommands",
@@ -35,6 +45,16 @@
                 "workbench.scm.focus",
             ]
         },
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
     },
     {
         "key": "ctrl+j",

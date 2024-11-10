@@ -1,4 +1,5 @@
-    "extensions.experimental.affinity": {
+    "maven.executable.path": "D:\\Program\\apache-maven-3.9.9\\bin\\mvn.cmd",
+        "extensions.experimental.affinity": {
         "vscodevim.vim": 1
     },
     "workbench.startupEditor": "none",
@@ -728,8 +729,10 @@
                 "c",
             ],
             "commands": [
-                "github.copilot.chat.explain",
+                // "github.copilot.chat.explain",
+                "codeium.explainCodeBlock"
             ],
+            "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
         },
         {
             "before": [
@@ -738,9 +741,11 @@
                 "p",
             ],
             "commands": [
-                "inlineChat.start"
+                // "inlineChat.start",
+                "codeium.openCodeiumCommand"
             ],
-            "when": "editorFocus && inlineChatHasProvider && inlineChatPossible && !editorReadonly"
+            // "when": "editorFocus && inlineChatHasProvider && inlineChatPossible && !editorReadonly"
+            "when": "codeium.commandEnabled && editorTextFocus && !inlineSuggestionsVisible"
         },
         {
             "before": [

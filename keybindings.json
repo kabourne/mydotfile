@@ -83,6 +83,16 @@
     },
     {
         "key": "ctrl+n",
+        "command": "editor.action.inlineSuggest.showNext",
+        "when": "inlineSuggestionVisible && !editorReadonly"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "editor.action.inlineSuggest.showPrevious",
+        "when": "inlineSuggestionVisible && !editorReadonly"
+    },
+    {
+        "key": "ctrl+n",
         "command": "github.copilot.nextPanelSolution",
         "when": "github.copilot.activated && github.copilot.panelVisible && activeWebviewPanelId == 'GitHub Copilot Suggestions'",
     },
@@ -253,5 +263,19 @@
         "key": "l",
         "command": "-list.select",
         "when": "listFocus && !inputFocus"
-    }
+    },
+    {
+        "key": "ctrl+j",
+        "command": "-workbench.action.togglePanel"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "-editor.action.triggerSuggest",
+        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+space",
+        "command": "-editor.action.triggerSuggest",
+        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
+    },
 ]

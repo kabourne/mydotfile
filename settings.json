@@ -298,6 +298,16 @@
         {
             "before": [
                 "g",
+                "A",
+            ],
+            "commands": [
+                "editor.action.autoFix",
+            ],
+            "when": "textInputFocus && !editorReadonly && supportedCodeAction =~ /(\\s|^)quickfix\\b/"
+        },
+        {
+            "before": [
+                "g",
                 "r",
             ],
             "commands": [
@@ -363,14 +373,26 @@
             "before": [
                 "<leader>",
                 "c",
+                "p",
+            ],
+            "commands": [
+                "inlineChat.start"
+            ],
+            "when": "editorFocus && inlineChatHasProvider && inlineChatPossible && !editorReadonly"
+        },
+        {
+            "before": [
+                "<leader>",
+                "c",
                 "m",
             ],
             "commands": [
-                "github.copilot.terminal.generateCommitMessage"
+                "github.copilot.terminal.generateCommitMessage",
+                "workbench.action.terminal.focus"
             ],
             "when": "editorTextFocus"
         },
-        {
+{
             "before": [
                 "<leader>",
                 "r",
@@ -433,6 +455,14 @@
             "commands": [
                 "workbench.action.nextEditorInGroup"
             ]
+        },
+        {
+            "before": [
+                "<C-m>"
+            ],
+            "commands": [
+                "workbench.action.togglePanel"
+            ],
         },
         {
             "before": [
@@ -678,16 +708,6 @@
             ],
             "when": ""
         },
-        {
-            "before": [
-                "<leader>",
-                "g",
-                "h",
-            ],
-            "commands": [
-                "testing.openOutputPeek"
-            ],
-        },
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         {
@@ -710,6 +730,17 @@
             "commands": [
                 "github.copilot.chat.explain",
             ],
+        },
+        {
+            "before": [
+                "<leader>",
+                "c",
+                "p",
+            ],
+            "commands": [
+                "inlineChat.start"
+            ],
+            "when": "editorFocus && inlineChatHasProvider && inlineChatPossible && !editorReadonly"
         },
         {
             "before": [
@@ -784,3 +815,6 @@
         "statusBar.foreground": "#434C5E",
         "statusBar.debuggingForeground": "#434C5E"
     },
+    "git.enableSmartCommit": true,
+    "git.autofetch": true,
+    "git.autoStash": true,

@@ -15,16 +15,6 @@
         },
         "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus) && !sideBarFocus"
     },
-        {
-        "key": "ctrl+m",
-        "command": "workbench.action.togglePanel",
-        "when": "focusedView == 'workbench.panel.comments' || focusedView == 'workbench.panel.testResults.view' || focusedView =~ /.*port.*/ || focusedView =~ /^gitlens\\.views.*/ || focusedView == 'workbench.panel.markers.view' || focusedView == 'workbench.panel.output' || focusedView == 'workbench.panel.repl.view' || focusedView == 'terminal'"
-    },
-    {
-        "key": "ctrl+t",
-        "command": "workbench.action.terminal.new",
-        "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
-    },
     {
         "key": "tab",
         "command": "runCommands",
@@ -47,14 +37,24 @@
         },
     },
     {
-        "key": "ctrl+j",
-        "command": "workbench.action.terminal.focusNext",
-        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+        "key": "ctrl+shift+i",
+        "command": "workbench.action.chat.openEditSession",
+        "when": "chatEditingParticipantRegistered && chatIsEnabled && view != 'workbench.panel.chat.view.edits'"
     },
     {
-        "key": "ctrl+k",
-        "command": "workbench.action.terminal.focusPrevious",
-        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+        "key": "ctrl+t",
+        "command": "workbench.action.terminal.new",
+        "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.nextSideBarView",
+        "when": "sideBarFocus"
+    },
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.previousSideBarView",
+        "when": "sideBarFocus"
     },
     {
         "key": "ctrl+j",
@@ -66,11 +66,21 @@
         "command": "workbench.action.previousSideBarView",
         "when": "sideBarFocus"
     },
-    // {
-    //     "key": "g p",
-    //     "command": "workbench.action.togglePanel",
-    //     "when": "focusedView == 'workbench.panel.comments' || focusedView == 'workbench.panel.testResults.view' || focusedView =~ /.*port.*/ || focusedView =~ /^gitlens\\.views.*/ || focusedView == 'workbench.panel.markers.view' || focusedView == 'workbench.panel.output' || focusedView == 'workbench.panel.repl.view' || focusedView == 'terminal'"
-    // },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "ctrl+m",
+        "command": "workbench.action.togglePanel",
+        "when": "focusedView == 'workbench.panel.comments' || focusedView == 'workbench.panel.testResults.view' || focusedView =~ /.*port.*/ || focusedView =~ /^gitlens\\.views.*/ || focusedView == 'workbench.panel.markers.view' || focusedView == 'workbench.panel.output' || focusedView == 'workbench.panel.repl.view' || focusedView == 'terminal'"
+    },
     {
         "key": "ctrl+h",
         "command": "workbench.action.previousPanelView",
@@ -83,16 +93,6 @@
     },
     {
         "key": "ctrl+n",
-        "command": "editor.action.inlineSuggest.showNext",
-        "when": "inlineSuggestionVisible && !editorReadonly"
-    },
-    {
-        "key": "ctrl+p",
-        "command": "editor.action.inlineSuggest.showPrevious",
-        "when": "inlineSuggestionVisible && !editorReadonly"
-    },
-    {
-        "key": "ctrl+n",
         "command": "github.copilot.nextPanelSolution",
         "when": "github.copilot.activated && github.copilot.panelVisible && activeWebviewPanelId == 'GitHub Copilot Suggestions'",
     },
@@ -101,16 +101,16 @@
         "command": "github.copilot.previousPanelSolution",
         "when": "github.copilot.activated && github.copilot.panelVisible && activeWebviewPanelId == 'GitHub Copilot Suggestions'",
     },
-    {
-        "key": "ctrl+n",
-        "command": "codeium.showNextCompletion",
-        "when": "inlineSuggestionVisible && !editorReadonly",
-    },
-    {
-        "key": "ctrl+p",
-        "command": "codeium.showPreviousCompletion",
-        "when": "inlineSuggestionVisible && !editorReadonly",
-    },
+    // {
+    //     "key": "ctrl+n",
+    //     "command": "codeium.showNextCompletion",
+    //     "when": "inlineSuggestionVisible && !editorReadonly",
+    // },
+    // {
+    //     "key": "ctrl+p",
+    //     "command": "codeium.showPreviousCompletion",
+    //     "when": "inlineSuggestionVisible && !editorReadonly",
+    // },
     {
         "key": "ctrl+n",
         "command": "quickInput.next",
@@ -263,19 +263,5 @@
         "key": "l",
         "command": "-list.select",
         "when": "listFocus && !inputFocus"
-    },
-    {
-        "key": "ctrl+j",
-        "command": "-workbench.action.togglePanel"
-    },
-    {
-        "key": "ctrl+i",
-        "command": "-editor.action.triggerSuggest",
-        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
-    },
-    {
-        "key": "ctrl+space",
-        "command": "-editor.action.triggerSuggest",
-        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
-    },
+    }
 ]

@@ -1,5 +1,5 @@
     "maven.executable.path": "D:\\Program\\apache-maven-3.9.9\\bin\\mvn.cmd",
-        "extensions.experimental.affinity": {
+    "extensions.experimental.affinity": {
         "vscodevim.vim": 1
     },
     "workbench.startupEditor": "none",
@@ -275,14 +275,13 @@
         },
         {
             "before": [
+                "e",
+            ],
+            "after": [
                 "<leader>",
-                "c",
-                "p",
-            ],
-            "commands": [
-                "",
-            ],
-            "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+                "<leader>",
+                "e"
+            ]
         },
         {
             "before": [
@@ -393,7 +392,7 @@
             ],
             "when": "editorTextFocus"
         },
-{
+        {
             "before": [
                 "<leader>",
                 "r",
@@ -420,16 +419,26 @@
                 "<C-p>",
             ],
             "commands": [
-                "workbench.action.quickOpen",
+                // "workbench.action.quickOpen",
+                "workbench.action.showEditorsInActiveGroup",
             ],
             "when": "editorTextFocus || !inputFocus"
         },
-       {
+        {
+            "before": [
+                "<C-[>",
+            ],
+            "commands": [
+                "workbench.action.quickOpen",
+                // "workbench.action.showEditorsInActiveGroup",
+            ],
+            "when": "editorTextFocus || !inputFocus"
+        },
+        {
             "before": [
                 "<C-f>",
             ],
             "commands": [
-                // "workbench.view.search",
                 "workbench.action.quickTextSearch",
             ]
         },
@@ -729,10 +738,8 @@
                 "c",
             ],
             "commands": [
-                // "github.copilot.chat.explain",
-                "codeium.explainCodeBlock"
+                "github.copilot.chat.explain",
             ],
-            "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
         },
         {
             "before": [
@@ -741,11 +748,9 @@
                 "p",
             ],
             "commands": [
-                // "inlineChat.start",
-                "codeium.openCodeiumCommand"
+                "inlineChat.start"
             ],
-            // "when": "editorFocus && inlineChatHasProvider && inlineChatPossible && !editorReadonly"
-            "when": "codeium.commandEnabled && editorTextFocus && !inlineSuggestionsVisible"
+            "when": "editorFocus && inlineChatHasProvider && inlineChatPossible && !editorReadonly"
         },
         {
             "before": [
@@ -823,3 +828,5 @@
     "git.enableSmartCommit": true,
     "git.autofetch": true,
     "git.autoStash": true,
+    "application.shellEnvironmentResolutionTimeout": 100,
+    "workbench.activityBar.location": "top",

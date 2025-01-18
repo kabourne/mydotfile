@@ -58,16 +58,6 @@
     },
     {
         "key": "ctrl+j",
-        "command": "workbench.action.nextSideBarView",
-        "when": "sideBarFocus"
-    },
-    {
-        "key": "ctrl+k",
-        "command": "workbench.action.previousSideBarView",
-        "when": "sideBarFocus"
-    },
-    {
-        "key": "ctrl+j",
         "command": "workbench.action.terminal.focusNext",
         "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
     },

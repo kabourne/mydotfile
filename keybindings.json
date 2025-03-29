@@ -26,20 +26,25 @@
         },
         "when": "sideBarFocus && !inputFocus"
     },
+    // windows
+    // {
+    //     "key": "cmd+k",
+    //     "command": "runCommands",
+    //     "args": {
+    //         "commands": [
+    //             "workbench.scm.focus",
+    //         ]
+    //     },
+    // },
     {
-        "key": "cmd+k",
-        // "key": "ctrl+k",
-        "command": "runCommands",
-        "args": {
-            "commands": [
-                "workbench.scm.focus",
-            ]
-        },
+        "key": "ctrl+shift+c",
+        "command": "workbench.panel.chat",
+        "when": "workbench.panel.chat.view.copilot.active"
     },
     {
         "key": "ctrl+shift+i",
-        "command": "workbench.action.chat.openEditSession",
-        "when": "chatEditingParticipantRegistered && chatIsEnabled && view != 'workbench.panel.chat.view.edits'"
+        "command": "workbench.panel.chatEditing",
+        "when": "workbench.panel.chat.view.edits.active"
     },
     {
         "key": "ctrl+t",
@@ -77,7 +82,12 @@
         "when": "focusedView == 'workbench.panel.comments' || focusedView == 'workbench.panel.testResults.view' || focusedView =~ /.*port.*/ || focusedView =~ /^gitlens\\.views.*/ || focusedView == 'workbench.panel.markers.view' || focusedView == 'workbench.panel.output' || focusedView == 'workbench.panel.repl.view' || focusedView == 'terminal'"
     },
     {
-        "key": "ctrl+l",
+        "key": "ctrl+shift+h",
+        "command": "workbench.action.nextPanelView",
+        "when": "focusedView == 'workbench.panel.comments' || focusedView == 'workbench.panel.testResults.view' || focusedView =~ /.*port.*/ || focusedView =~ /^gitlens\\.views.*/ || focusedView == 'workbench.panel.markers.view' || focusedView == 'workbench.panel.output' || focusedView == 'workbench.panel.repl.view' || focusedView == 'terminal'"
+    },
+    {
+        "key": "ctrl+shift+l",
         "command": "workbench.action.nextPanelView",
         "when": "focusedView == 'workbench.panel.comments' || focusedView == 'workbench.panel.testResults.view' || focusedView =~ /.*port.*/ || focusedView =~ /^gitlens\\.views.*/ || focusedView == 'workbench.panel.markers.view' || focusedView == 'workbench.panel.output' || focusedView == 'workbench.panel.repl.view' || focusedView == 'terminal'"
     },
@@ -164,17 +174,17 @@
     {
         "key": "y",
         "command": "",
-        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !inputFocus"
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !inputFocus && editorFocus"
     },
     {
         "key": "shift-y",
         "command": "",
-        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !inputFocus"
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !inputFocus && editorFocus"
     },
     {
         "key": "g y",
         "command": "workbench.action.files.copyPathOfActiveFile",
-        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !inputFocus"
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !inputFocus && editorFocus"
     },
     {
         "key": "s v",
@@ -253,5 +263,32 @@
         "key": "l",
         "command": "-list.select",
         "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "shift shift",
+        "command": "workbench.action.focusFirstEditorGroup"
+    },
+    {
+        "key": "ctrl+shift+h",
+        "command": "-workbench.action.replaceInFiles"
+    },
+    // windows
+    {
+        "key": "ctrl+e",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+h",
+        "command": "-editor.action.startFindReplaceAction",
+        "when": "editorFocus || editorIsOpen"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "-workbench.action.terminal.openNativeConsole",
+        "when": "!terminalFocus"
     }
 ]

@@ -2,6 +2,7 @@
     "extensions.experimental.affinity": {
         "vscodevim.vim": 1
     },
+    "workbench.editor.enablePreview": false,
     "workbench.startupEditor": "none",
     "workbench.list.smoothScrolling": true,
     "workbench.colorTheme": "Default Dark+",

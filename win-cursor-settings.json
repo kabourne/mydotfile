@@ -1,0 +1,953 @@
+{
+    "window.commandCenter": true,
+    "maven.executable.path": "D:\\Program\\apache-maven-3.9.9\\bin\\mvn.cmd",
+    "extensions.experimental.affinity": {
+        "vscodevim.vim": 1
+    },
+    "workbench.editor.enablePreview": false,
+    "workbench.startupEditor": "none",
+    "workbench.list.smoothScrolling": true,
+    "workbench.colorTheme": "Default Dark+",
+    "window.zoomLevel": 1,
+    "files.autoSave": "afterDelay",
+    "editor.smoothScrolling": true,
+    "editor.cursorBlinking": "solid",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.minimap.enabled": false,
+    "editor.insertSpaces": true,
+    "vim.mouseSelectionGoesIntoVisualMode": false,
+    // "vim.autoSwitchInputMethod.enable": true,
+    // "vim.autoSwitchInputMethod.defaultIM": "com.apple.keylayout.ABC",
+    // "vim.autoSwitchInputMethod.obtainIMCmd": "/usr/local/bin/im-select",
+    // "vim.autoSwitchInputMethod.switchIMCmd": "/usr/local/bin/im-select {im}",
+    // "vim.autoSwitchInputMethod.defaultIM": "1033",
+    // "vim.autoSwitchInputMethod.obtainIMCmd": "D:\\Program\\im-select.exe",
+    // "vim.autoSwitchInputMethod.switchIMCmd": "D:\\Program\\im-select.exe {im}",
+    "vim.sneak": false,
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.visualstar": true,
+    "vim.autoindent": true,
+    "vim.ignorecase": true,
+    "vim.surround": true,
+    "vim.highlightedyank.enable": true,
+    "vim.highlightedyank.duration": 500,
+    "vim.highlightedyank.color": "rgba(250, 240, 240, 0.9)",
+    "vim.leader": "<space>",
+    "vim.statusBarColorControl": true,
+    "vim.statusBarColors.normal": [
+        "8FBCBB_1",
+        "434C5E_1"
+    ],
+    "vim.statusBarColors.insert": "BF616A_1",
+    "vim.statusBarColors.visual": "B48EAD_1",
+    "vim.statusBarColors.visualline": "B48EAD_1",
+    "vim.statusBarColors.visualblock": "A3BE8C_1",
+    "vim.statusBarColors.replace": "D08770_1",
+    "vim.statusBarColors.commandlineinprogress": "007ACC_1",
+    "vim.statusBarColors.searchinprogressmode": "007ACC_1",
+    "vim.statusBarColors.easymotionmode": "007ACC_1",
+    "vim.statusBarColors.easymotioninputmode": "007ACC_1",
+    "vim.statusBarColors.surroundinputmode": "007ACC_1",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "$"
+            ],
+            "after": [
+                "g",
+                "_"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "_"
+            ],
+            "after": [
+                "$"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "p",
+            ],
+            "commands": [
+                "workbench.action.togglePanel"
+            ],
+            "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+        },
+        {
+            "before": [
+                "<leader>",
+                "z",
+            ],
+            "commands": [
+                "workbench.action.toggleZenMode"
+            ],
+            "when": "!isAuxiliaryWindowFocusedContext"
+        },
+        {
+            "before": [
+                "=",
+            ],
+            "commands": [
+                "editor.action.smartSelect.expand"
+            ],
+            "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+        },
+        {
+            "before": [
+                "-",
+            ],
+            "commands": [
+                "editor.action.smartSelect.shrink"
+            ],
+            "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+        },
+        {
+            "before": [
+                "=",
+                "=",
+            ],
+            "commands": [
+                "editor.action.formatDocument"
+            ],
+            "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+        },
+        {
+            "before": [
+                "-",
+                "-",
+            ],
+            "commands": [
+                "editor.action.organizeImports"
+            ],
+            "when": "textInputFocus && !editorReadonly && supportedCodeAction =~ /(\\s|^)source\\.organizeImports\\b/"
+        },
+        {
+            "before": [
+                ",",
+                "<Enter>"
+            ],
+            "commands": [
+                ":nohl"
+            ]
+        },
+        {
+            "before": [
+                "H"
+            ],
+            "after": [
+                "^"
+            ]
+        },
+        {
+            "before": [
+                "L"
+            ],
+            "after": [
+                "$"
+            ]
+        },
+        {
+            "before": [
+                "<C-j>",
+            ],
+            "after": [
+                "j",
+                "j",
+                "j",
+            ]
+        },
+        {
+            "before": [
+                "<C-k>",
+            ],
+            "after": [
+                "k",
+                "k",
+                "k",
+            ]
+        },
+        {
+            "before": [
+                "<C-d>",
+            ],
+            "after": [
+                "<C-e>",
+                "<C-e>",
+                "<C-e>",
+            ]
+        },
+        {
+            "before": [
+                "<C-u>",
+            ],
+            "after": [
+                "<C-y>",
+                "<C-y>",
+                "<C-y>",
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "k",
+            ],
+            "commands": [
+                "editor.action.marker.prevInFiles"
+            ],
+            "when": "editorTextFocus || !inputFocus"
+        },
+        {
+            "before": [
+                "g",
+                "j",
+            ],
+            "commands": [
+                "editor.action.marker.nextInFiles"
+            ],
+            "when": "editorTextFocus || !inputFocus"
+        },
+        {
+            "before": [
+                "f",
+            ],
+            "after": [
+                "<leader>",
+                "<leader>",
+                "f"
+            ]
+        },
+        {
+            "before": [
+                "F",
+            ],
+            "after": [
+                "<leader>",
+                "<leader>",
+                "F"
+            ]
+        },
+        {
+            "before": [
+                "t",
+            ],
+            "after": [
+                "<leader>",
+                "<leader>",
+                "t"
+            ]
+        },
+        {
+            "before": [
+                "T",
+            ],
+            "after": [
+                "<leader>",
+                "<leader>",
+                "T"
+            ]
+        },
+        {
+            "before": [
+                "w",
+            ],
+            "after": [
+                "<leader>",
+                "<leader>",
+                "w"
+            ]
+        },
+        {
+            "before": [
+                "b",
+            ],
+            "after": [
+                "<leader>",
+                "<leader>",
+                "b"
+            ]
+        },
+        {
+            "before": [
+                "e",
+            ],
+            "after": [
+                "<leader>",
+                "<leader>",
+                "e"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "a",
+            ],
+            "commands": [
+                // "editor.action.codeAction"
+                // "editor.action.sourceAction"
+                "editor.action.quickFix",
+            ],
+            "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+        },
+        {
+            "before": [
+                "g",
+                "A",
+            ],
+            "commands": [
+                "editor.action.autoFix",
+            ],
+            "when": "textInputFocus && !editorReadonly && supportedCodeAction =~ /(\\s|^)quickfix\\b/"
+        },
+        {
+            "before": [
+                "g",
+                "d",
+            ],
+            "commands": [
+                "editor.action.goToDeclaration",
+                // "editor.action.revealDefinitionAside"
+            ],
+            "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+        },
+        {
+            "before": [
+                "g",
+                "D",
+            ],
+            "commands": [
+                "editor.action.goToTypeDefinition",
+                // "explorer.openAndPassFocus"
+            ],
+            "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+        },
+        {
+            "before": [
+                "g",
+                "i",
+            ],
+            "commands": [
+                "editor.action.goToImplementation",
+                "explorer.openAndPassFocus"
+            ],
+            "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
+        },
+        {
+            "before": [
+                "g",
+                "r",
+            ],
+            "commands": [
+                "editor.action.goToReferences",
+                // "references-view.findReferences"
+            ],
+            "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+        },
+        {
+            "before": [
+                "g",
+                "u",
+            ],
+            "commands": [
+                "java.action.navigateToSuperImplementation",
+                "explorer.openAndPassFocus"
+            ],
+            "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
+        },
+        {
+            "before": [
+                "g",
+                "h",
+            ],
+            "commands": [
+                "editor.action.showHover"
+            ],
+            "when": "editorTextFocus"
+        },
+        {
+            "before": [
+                "<leader>",
+                "c",
+                "p",
+            ],
+            "commands": [
+                "inlineChat.start"
+            ],
+            "when": "editorFocus && inlineChatHasProvider && inlineChatPossible && !editorReadonly"
+        },
+        {
+            "before": [
+                "<leader>",
+                "c",
+                "m",
+            ],
+            "commands": [
+                "github.copilot.terminal.generateCommitMessage",
+                "workbench.action.terminal.focus"
+            ],
+            "when": "editorTextFocus"
+        },
+        {
+            "before": [
+                "<leader>",
+                "r",
+                "n",
+            ],
+            "commands": [
+                "editor.action.rename"
+            ],
+            "when": "editorTextFocus"
+        },
+        {
+            "before": [
+                "<leader>",
+                "t",
+                "c",
+            ],
+            "commands": [
+                "workbench.action.terminal.toggleTerminal"
+            ],
+            "when": "terminal.active"
+        },
+        {
+            "before": [
+                "<C-p>",
+            ],
+            "commands": [
+                "workbench.action.quickOpen",
+                // "workbench.action.showEditorsInActiveGroup",
+            ],
+            "when": "editorTextFocus || !inputFocus"
+        },
+        {
+            "before": [
+                "s",
+                "f",
+            ],
+            "commands": [
+                // "workbench.action.quickOpen",
+                // "workbench.action.showAllEditors"
+                "workbench.action.showEditorsInActiveGroup",
+            ],
+            "when": "editorTextFocus || !inputFocus"
+        },
+        // {
+        //     "before": [
+        //         "<C-[>",
+        //     ],
+        //     "commands": [
+        //         "workbench.action.quickOpen",
+        //         // "workbench.action.showEditorsInActiveGroup",
+        //     ],
+        //     "when": "editorTextFocus || !inputFocus"
+        // },
+        {
+            "before": [
+                "<C-f>",
+            ],
+            "commands": [
+                "workbench.action.quickTextSearch",
+            ]
+        },
+        {
+            "before": [
+                "<C-w>"
+            ],
+            "commands": [
+                "workbench.action.closeActiveEditor"
+            ]
+        },
+        {
+            "before": [
+                "<C-h>"
+            ],
+            "commands": [
+                "workbench.action.previousEditorInGroup"
+            ]
+        },
+        {
+            "before": [
+                "<C-l>"
+            ],
+            "commands": [
+                "workbench.action.nextEditorInGroup"
+            ]
+        },
+        {
+            "before": [
+                "<C-m>"
+            ],
+            "commands": [
+                "workbench.action.togglePanel"
+            ],
+        },
+        {
+            "before": [
+                "<leader>",
+                "b",
+                "o"
+            ],
+            "commands": [
+                "workbench.action.closeOtherEditors"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "b",
+                "l",
+            ],
+            "commands": [
+                "workbench.action.closeEditorsToTheLeft"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "b",
+                "r",
+            ],
+            "commands": [
+                "workbench.action.closeEditorsToTheRight"
+            ]
+        },
+        {
+            "before": [
+                "s",
+                "v",
+            ],
+            "commands": [
+                "workbench.action.splitEditor"
+            ]
+        },
+        {
+            "before": [
+                "s",
+                "h",
+            ],
+            "commands": [
+                "workbench.action.splitEditorDown"
+            ]
+        },
+        {
+            "before": [
+                "s",
+                "c",
+            ],
+            "commands": [
+                "workbench.action.closeActiveEditor"
+            ]
+        },
+        {
+            "before": [
+                "s",
+                "o",
+            ],
+            "commands": [
+                "workbench.action.closeEditorsInOtherGroups"
+            ]
+        },
+        {
+            "before": [
+                "s",
+                ",",
+            ],
+            "commands": [
+                "workbench.action.decreaseViewSize"
+            ]
+        },
+        {
+            "before": [
+                "s",
+                ".",
+            ],
+            "commands": [
+                "workbench.action.increaseViewSize"
+            ]
+        },
+        {
+            "before": [
+                "s",
+                "j",
+            ],
+            "commands": [
+                "workbench.action.decreaseViewSize"
+            ]
+        },
+        {
+            "before": [
+                "s",
+                "k",
+            ],
+            "commands": [
+                "workbench.action.increaseViewSize"
+            ]
+        },
+        {
+            "before": [
+                "s",
+                "=",
+            ],
+            "commands": [
+                "workbench.action.evenEditorWidths"
+            ]
+        },
+        {
+            "before": [
+                "<space>",
+                "k"
+            ],
+            "commands": [
+                "workbench.action.focusAboveGroup"
+            ]
+        },
+        {
+            "before": [
+                "<space>",
+                "j",
+            ],
+            "commands": [
+                "workbench.action.focusBelowGroup"
+            ]
+        },
+        {
+            "before": [
+                "<space>",
+                "h"
+            ],
+            "commands": [
+                "workbench.action.focusLeftGroup",
+            ]
+        },
+        {
+            "before": [
+                "<space>",
+                "l"
+            ],
+            "commands": [
+                "workbench.action.focusRightGroup"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "d",
+                "c",
+            ],
+            "commands": [
+                "workbench.action.debug.continue"
+            ],
+            "when": "debugState == 'stopped'"
+        },
+        {
+            "before": [
+                "<leader>",
+                "d",
+                "e",
+            ],
+            "commands": [
+                "workbench.action.debug.stop"
+            ],
+            "when": "inDebugMode && !focusedSessionIsAttach"
+        },
+        {
+            "before": [
+                "<leader>",
+                "d",
+                "j",
+            ],
+            "commands": [
+                "workbench.action.debug.stepOver"
+            ],
+            "when": "debugState == 'stopped'"
+        },
+        {
+            "before": [
+                "<leader>",
+                "d",
+                "i",
+            ],
+            "commands": [
+                "workbench.action.debug.stepInto"
+            ],
+            "when": "debugState != 'inactive'"
+        },
+        {
+            "before": [
+                "<leader>",
+                "d",
+                "o",
+            ],
+            "commands": [
+                "workbench.action.debug.stepOut"
+            ],
+            "when": "debugState == 'stopped'"
+        },
+        {
+            "before": [
+                "<leader>",
+                "d",
+                "t",
+            ],
+            "commands": [
+                "editor.debug.action.toggleBreakpoint"
+            ],
+            "when": "debuggersAvailable && disassemblyViewFocus || debuggersAvailable && editorTextFocus"
+        },
+        {
+            "before": [
+                "<leader>",
+                "d",
+                "T",
+            ],
+            "commands": [
+                "debug.removeBreakpoint"
+            ],
+            "when": "breakpointsFocused && !breakpointInputFocused"
+        },
+        {
+            "before": [
+                "<leader>",
+                "d",
+                "h",
+            ],
+            "commands": [
+                "editor.debug.action.selectionToRepl"
+            ],
+        },
+        {
+            "before": [
+                "<leader>",
+                "n",
+                "t",
+            ],
+            "commands": [
+                "workbench.view.testing.focus"
+            ],
+            "when": ""
+        },
+        {
+            "before": [
+                "<leader>",
+                "n",
+                "r",
+            ],
+            "commands": [
+                "testing.runAtCursor"
+            ],
+            "when": "editorTextFocus"
+        },
+        {
+            "before": [
+                "<leader>",
+                "n",
+                "f",
+            ],
+            "commands": [
+                "testing.runCurrentFile"
+            ],
+            "when": "editorTextFocus"
+        },
+        {
+            "before": [
+                "<leader>",
+                "n",
+                "d",
+            ],
+            "commands": [
+                "testing.debugAtCursor"
+            ],
+            "when": ""
+        },
+        {
+            "before": [
+                "<leader>",
+                "n",
+                "s",
+            ],
+            "commands": [
+                "testing.stopContinuousRun"
+            ],
+            "when": ""
+        },
+        {
+            "before": [
+                "<leader>",
+                "g",
+                "h",
+            ],
+            "commands": [
+                "testing.showMostRecentOutput"
+            ],
+            "when": ""
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<leader>",
+                "c",
+                "h",
+            ],
+            "commands": [
+                // "github.copilot.chat.fix",
+            ],
+            "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+        },
+        {
+            "before": [
+                "<leader>",
+                "c",
+                "c",
+            ],
+            "commands": [
+                "aichat.insertselectionintochat",
+                "aichat.append 'Please explain this'",
+                "aichat.submit"
+            ],
+        },
+        {
+            "before": [
+                "<leader>",
+                "c",
+                "p",
+            ],
+            "commands": [
+                "aichat.insertselectionintochat",
+            ],
+            "when": "editorFocus && inlineChatHasProvider && inlineChatPossible && !editorReadonly"
+        },
+        {
+            "before": [
+                ">"
+            ],
+            "after": [
+                ">",
+                "g",
+                "v"
+            ]
+        },
+        {
+            "before": [
+                ">"
+            ],
+            "after": [
+                ">",
+                "g",
+                "v"
+            ]
+        },
+        {
+            "before": [
+                ">"
+            ],
+            "after": [
+                ">",
+                "g",
+                "v"
+            ]
+        },
+        {
+            "before": [
+                ">"
+            ],
+            "after": [
+                ">",
+                "g",
+                "v"
+            ]
+        },
+        {
+            "before": [
+                "p",
+            ],
+            "after": [
+                "p",
+                "g",
+                "v",
+                "y"
+            ]
+        },
+    ],
+    "vim.insertModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<C-n>",
+            ],
+            "commands": [
+                "editor.action.triggerSuggest"
+            ],
+            "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
+        },
+        {
+            "before": [
+                "<C-j>",
+            ],
+            "commands": [
+                "editor.action.inlineSuggest.trigger"
+            ],
+            "when": "config.github.copilot.inlineSuggest.enable && editorTextFocus && !editorHasSelection && !inlineSuggestionsVisible"
+        },
+    ],
+    "vim.operatorPendingModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "L"
+            ],
+            "after": [
+                "$"
+            ]
+        },
+        {
+            "before": [
+                "H"
+            ],
+            "after": [
+                "^"
+            ]
+        }
+    ],
+    "workbench.colorCustomizations": {
+        "statusBar.background": "B48EAD_1",
+        "statusBar.noFolderBackground": "B48EAD_1",
+        "statusBar.debuggingBackground": "B48EAD_1",
+        "statusBar.foreground": "434C5E_1",
+        "statusBar.debuggingForeground": "434C5E_1"
+    },
+    "git.enableSmartCommit": true,
+    "git.autofetch": true,
+    "git.autoStash": true,
+    "workbench.activityBar.location": "top",
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell"
+        },
+        "Command Prompt": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": [],
+            "icon": "terminal-cmd"
+        },
+        "Git Bash": {
+            "source": "Git Bash"
+        },
+        "Ubuntu (WSL)": {
+            "path": "C:\\Windows\\System32\\wsl.exe",
+            "args": [
+                "-d",
+                "Ubuntu"
+            ]
+        }
+    },
+    // "terminal.integrated.defaultProfile.windows": "Ubuntu (WSL)",
+}

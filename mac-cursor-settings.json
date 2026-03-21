@@ -1,13 +1,11 @@
 {
     "window.commandCenter": true,
-    // "maven.executable.path": "D:\\Program\\apache-maven-3.9.9\\bin\\mvn.cmd",
     "extensions.experimental.affinity": {
         "vscodevim.vim": 1
     },
     "workbench.editor.enablePreview": false,
     "workbench.startupEditor": "none",
     "workbench.list.smoothScrolling": true,
-    "workbench.colorTheme": "Default Dark+",
     "window.zoomLevel": 1,
     "files.autoSave": "afterDelay",
     "editor.smoothScrolling": true,
@@ -20,9 +18,6 @@
     "vim.autoSwitchInputMethod.defaultIM": "com.apple.keylayout.ABC",
     "vim.autoSwitchInputMethod.obtainIMCmd": "/opt/homebrew/bin/im-select",
     "vim.autoSwitchInputMethod.switchIMCmd": "/opt/homebrew/bin/im-select {im}",
-    // "vim.autoSwitchInputMethod.defaultIM": "1033",
-    // "vim.autoSwitchInputMethod.obtainIMCmd": "D:\\Program\\im-select.exe",
-    // "vim.autoSwitchInputMethod.switchIMCmd": "D:\\Program\\im-select.exe {im}",
     "vim.sneak": false,
     "vim.easymotion": true,
     "vim.incsearch": true,
@@ -68,7 +63,7 @@
         {
             "before": [
                 "g",
-                "p",
+                "p"
             ],
             "commands": [
                 "workbench.action.togglePanel"
@@ -78,7 +73,7 @@
         {
             "before": [
                 "<leader>",
-                "z",
+                "z"
             ],
             "commands": [
                 "workbench.action.toggleZenMode"
@@ -87,7 +82,7 @@
         },
         {
             "before": [
-                "=",
+                "="
             ],
             "commands": [
                 "editor.action.smartSelect.expand"
@@ -96,7 +91,7 @@
         },
         {
             "before": [
-                "-",
+                "-"
             ],
             "commands": [
                 "editor.action.smartSelect.shrink"
@@ -106,7 +101,7 @@
         {
             "before": [
                 "=",
-                "=",
+                "="
             ],
             "commands": [
                 "editor.action.formatDocument"
@@ -116,7 +111,7 @@
         {
             "before": [
                 "-",
-                "-",
+                "-"
             ],
             "commands": [
                 "editor.action.organizeImports"
@@ -150,48 +145,48 @@
         },
         {
             "before": [
-                "<C-j>",
+                "<C-j>"
             ],
             "after": [
                 "j",
                 "j",
-                "j",
+                "j"
             ]
         },
         {
             "before": [
-                "<C-k>",
+                "<C-k>"
             ],
             "after": [
                 "k",
                 "k",
-                "k",
+                "k"
             ]
         },
         {
             "before": [
-                "<C-d>",
+                "<C-d>"
             ],
             "after": [
                 "<C-e>",
                 "<C-e>",
-                "<C-e>",
+                "<C-e>"
             ]
         },
         {
             "before": [
-                "<C-u>",
+                "<C-u>"
             ],
             "after": [
                 "<C-y>",
                 "<C-y>",
-                "<C-y>",
+                "<C-y>"
             ]
         },
         {
             "before": [
                 "g",
-                "k",
+                "k"
             ],
             "commands": [
                 "editor.action.marker.prevInFiles"
@@ -201,7 +196,7 @@
         {
             "before": [
                 "g",
-                "j",
+                "j"
             ],
             "commands": [
                 "editor.action.marker.nextInFiles"
@@ -210,7 +205,7 @@
         },
         {
             "before": [
-                "f",
+                "f"
             ],
             "after": [
                 "<leader>",
@@ -220,7 +215,7 @@
         },
         {
             "before": [
-                "F",
+                "F"
             ],
             "after": [
                 "<leader>",
@@ -230,7 +225,7 @@
         },
         {
             "before": [
-                "t",
+                "t"
             ],
             "after": [
                 "<leader>",
@@ -240,7 +235,7 @@
         },
         {
             "before": [
-                "T",
+                "T"
             ],
             "after": [
                 "<leader>",
@@ -250,7 +245,7 @@
         },
         {
             "before": [
-                "w",
+                "w"
             ],
             "after": [
                 "<leader>",
@@ -260,7 +255,7 @@
         },
         {
             "before": [
-                "b",
+                "b"
             ],
             "after": [
                 "<leader>",
@@ -270,7 +265,7 @@
         },
         {
             "before": [
-                "e",
+                "e"
             ],
             "after": [
                 "<leader>",
@@ -281,51 +276,47 @@
         {
             "before": [
                 "g",
-                "a",
+                "a"
             ],
             "commands": [
-                // "editor.action.codeAction"
-                // "editor.action.sourceAction"
-                "editor.action.quickFix",
+                "editor.action.quickFix"
             ],
             "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
         },
         {
             "before": [
                 "g",
-                "A",
+                "A"
             ],
             "commands": [
-                "editor.action.autoFix",
+                "editor.action.autoFix"
             ],
             "when": "textInputFocus && !editorReadonly && supportedCodeAction =~ /(\\s|^)quickfix\\b/"
         },
         {
             "before": [
                 "g",
-                "d",
+                "d"
             ],
             "commands": [
-                "editor.action.goToDeclaration",
-                // "editor.action.revealDefinitionAside"
+                "editor.action.goToDeclaration"
             ],
             "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
         },
         {
             "before": [
                 "g",
-                "D",
+                "D"
             ],
             "commands": [
-                "editor.action.goToTypeDefinition",
-                // "explorer.openAndPassFocus"
+                "editor.action.goToTypeDefinition"
             ],
             "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
         },
         {
             "before": [
                 "g",
-                "i",
+                "i"
             ],
             "commands": [
                 "editor.action.goToImplementation",
@@ -336,18 +327,17 @@
         {
             "before": [
                 "g",
-                "r",
+                "r"
             ],
             "commands": [
-                "editor.action.goToReferences",
-                // "references-view.findReferences"
+                "editor.action.goToReferences"
             ],
             "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
         },
         {
             "before": [
                 "g",
-                "u",
+                "u"
             ],
             "commands": [
                 "java.action.navigateToSuperImplementation",
@@ -358,7 +348,7 @@
         {
             "before": [
                 "g",
-                "h",
+                "h"
             ],
             "commands": [
                 "editor.action.showHover"
@@ -369,7 +359,7 @@
             "before": [
                 "<leader>",
                 "c",
-                "p",
+                "p"
             ],
             "commands": [
                 "inlineChat.start"
@@ -380,7 +370,7 @@
             "before": [
                 "<leader>",
                 "c",
-                "m",
+                "m"
             ],
             "commands": [
                 "github.copilot.terminal.generateCommitMessage",
@@ -392,7 +382,7 @@
             "before": [
                 "<leader>",
                 "r",
-                "n",
+                "n"
             ],
             "commands": [
                 "editor.action.rename"
@@ -403,7 +393,7 @@
             "before": [
                 "<leader>",
                 "t",
-                "c",
+                "c"
             ],
             "commands": [
                 "workbench.action.terminal.toggleTerminal"
@@ -412,42 +402,29 @@
         },
         {
             "before": [
-                "<C-p>",
+                "<C-p>"
             ],
             "commands": [
-                "workbench.action.quickOpen",
-                // "workbench.action.showEditorsInActiveGroup",
+                "workbench.action.quickOpen"
             ],
             "when": "editorTextFocus || !inputFocus"
         },
         {
             "before": [
                 "s",
-                "f",
+                "f"
             ],
             "commands": [
-                // "workbench.action.quickOpen",
-                // "workbench.action.showAllEditors"
-                "workbench.action.showEditorsInActiveGroup",
+                "workbench.action.showEditorsInActiveGroup"
             ],
             "when": "editorTextFocus || !inputFocus"
         },
-        // {
-        //     "before": [
-        //         "<C-[>",
-        //     ],
-        //     "commands": [
-        //         "workbench.action.quickOpen",
-        //         // "workbench.action.showEditorsInActiveGroup",
-        //     ],
-        //     "when": "editorTextFocus || !inputFocus"
-        // },
         {
             "before": [
-                "<C-f>",
+                "<C-f>"
             ],
             "commands": [
-                "workbench.action.quickTextSearch",
+                "workbench.action.quickTextSearch"
             ]
         },
         {
@@ -480,7 +457,7 @@
             ],
             "commands": [
                 "workbench.action.togglePanel"
-            ],
+            ]
         },
         {
             "before": [
@@ -496,7 +473,7 @@
             "before": [
                 "<leader>",
                 "b",
-                "l",
+                "l"
             ],
             "commands": [
                 "workbench.action.closeEditorsToTheLeft"
@@ -506,7 +483,7 @@
             "before": [
                 "<leader>",
                 "b",
-                "r",
+                "r"
             ],
             "commands": [
                 "workbench.action.closeEditorsToTheRight"
@@ -515,7 +492,7 @@
         {
             "before": [
                 "s",
-                "v",
+                "v"
             ],
             "commands": [
                 "workbench.action.splitEditor"
@@ -524,7 +501,7 @@
         {
             "before": [
                 "s",
-                "h",
+                "h"
             ],
             "commands": [
                 "workbench.action.splitEditorDown"
@@ -533,7 +510,7 @@
         {
             "before": [
                 "s",
-                "c",
+                "c"
             ],
             "commands": [
                 "workbench.action.closeActiveEditor"
@@ -542,7 +519,7 @@
         {
             "before": [
                 "s",
-                "o",
+                "o"
             ],
             "commands": [
                 "workbench.action.closeEditorsInOtherGroups"
@@ -551,7 +528,7 @@
         {
             "before": [
                 "s",
-                ",",
+                ","
             ],
             "commands": [
                 "workbench.action.decreaseViewSize"
@@ -560,7 +537,7 @@
         {
             "before": [
                 "s",
-                ".",
+                "."
             ],
             "commands": [
                 "workbench.action.increaseViewSize"
@@ -569,7 +546,7 @@
         {
             "before": [
                 "s",
-                "j",
+                "j"
             ],
             "commands": [
                 "workbench.action.decreaseViewSize"
@@ -578,7 +555,7 @@
         {
             "before": [
                 "s",
-                "k",
+                "k"
             ],
             "commands": [
                 "workbench.action.increaseViewSize"
@@ -587,7 +564,7 @@
         {
             "before": [
                 "s",
-                "=",
+                "="
             ],
             "commands": [
                 "workbench.action.evenEditorWidths"
@@ -605,7 +582,7 @@
         {
             "before": [
                 "<space>",
-                "j",
+                "j"
             ],
             "commands": [
                 "workbench.action.focusBelowGroup"
@@ -617,7 +594,7 @@
                 "h"
             ],
             "commands": [
-                "workbench.action.focusLeftGroup",
+                "workbench.action.focusLeftGroup"
             ]
         },
         {
@@ -633,7 +610,7 @@
             "before": [
                 "<leader>",
                 "d",
-                "c",
+                "c"
             ],
             "commands": [
                 "workbench.action.debug.continue"
@@ -644,7 +621,7 @@
             "before": [
                 "<leader>",
                 "d",
-                "e",
+                "e"
             ],
             "commands": [
                 "workbench.action.debug.stop"
@@ -655,7 +632,7 @@
             "before": [
                 "<leader>",
                 "d",
-                "j",
+                "j"
             ],
             "commands": [
                 "workbench.action.debug.stepOver"
@@ -666,7 +643,7 @@
             "before": [
                 "<leader>",
                 "d",
-                "i",
+                "i"
             ],
             "commands": [
                 "workbench.action.debug.stepInto"
@@ -677,7 +654,7 @@
             "before": [
                 "<leader>",
                 "d",
-                "o",
+                "o"
             ],
             "commands": [
                 "workbench.action.debug.stepOut"
@@ -688,7 +665,7 @@
             "before": [
                 "<leader>",
                 "d",
-                "t",
+                "t"
             ],
             "commands": [
                 "editor.debug.action.toggleBreakpoint"
@@ -699,7 +676,7 @@
             "before": [
                 "<leader>",
                 "d",
-                "T",
+                "T"
             ],
             "commands": [
                 "debug.removeBreakpoint"
@@ -710,17 +687,17 @@
             "before": [
                 "<leader>",
                 "d",
-                "h",
+                "h"
             ],
             "commands": [
                 "editor.debug.action.selectionToRepl"
-            ],
+            ]
         },
         {
             "before": [
                 "<leader>",
                 "n",
-                "t",
+                "t"
             ],
             "commands": [
                 "workbench.view.testing.focus"
@@ -731,7 +708,7 @@
             "before": [
                 "<leader>",
                 "n",
-                "r",
+                "r"
             ],
             "commands": [
                 "testing.runAtCursor"
@@ -742,7 +719,7 @@
             "before": [
                 "<leader>",
                 "n",
-                "f",
+                "f"
             ],
             "commands": [
                 "testing.runCurrentFile"
@@ -753,7 +730,7 @@
             "before": [
                 "<leader>",
                 "n",
-                "d",
+                "d"
             ],
             "commands": [
                 "testing.debugAtCursor"
@@ -764,7 +741,7 @@
             "before": [
                 "<leader>",
                 "n",
-                "s",
+                "s"
             ],
             "commands": [
                 "testing.stopContinuousRun"
@@ -775,7 +752,7 @@
             "before": [
                 "<leader>",
                 "g",
-                "h",
+                "h"
             ],
             "commands": [
                 "testing.showMostRecentOutput"
@@ -788,32 +765,32 @@
             "before": [
                 "<leader>",
                 "c",
-                "h",
+                "h"
             ],
             "commands": [
-                "cursorai.action.generateInTerminal",
+                "cursorai.action.generateInTerminal"
             ]
         },
         {
             "before": [
                 "<leader>",
                 "c",
-                "c",
+                "c"
             ],
             "commands": [
                 "aichat.insertselectionintochat",
                 "aichat.append 'Please explain this'",
                 "aichat.submit"
-            ],
+            ]
         },
         {
             "before": [
                 "<leader>",
                 "c",
-                "p",
+                "p"
             ],
             "commands": [
-                "composer.sendToAgent",
+                "composer.sendToAgent"
             ]
         },
         {
@@ -858,7 +835,7 @@
         },
         {
             "before": [
-                "p",
+                "p"
             ],
             "after": [
                 "p",
@@ -866,12 +843,12 @@
                 "v",
                 "y"
             ]
-        },
+        }
     ],
     "vim.insertModeKeyBindingsNonRecursive": [
         {
             "before": [
-                "<C-n>",
+                "<C-n>"
             ],
             "commands": [
                 "editor.action.triggerSuggest"
@@ -880,13 +857,13 @@
         },
         {
             "before": [
-                "<C-j>",
+                "<C-j>"
             ],
             "commands": [
                 "editor.action.inlineSuggest.trigger"
             ],
             "when": "config.github.copilot.inlineSuggest.enable && editorTextFocus && !editorHasSelection && !inlineSuggestionsVisible"
-        },
+        }
     ],
     "vim.operatorPendingModeKeyBindingsNonRecursive": [
         {
@@ -908,5 +885,9 @@
     ],
     "git.enableSmartCommit": true,
     "git.autofetch": true,
-    "git.autoStash": true
+    "git.autoStash": true,
+    "git.confirmSync": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "cursor.general.disableHttp2": false,
+    "update.mode": "none"
 }

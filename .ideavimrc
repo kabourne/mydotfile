@@ -1,3 +1,5 @@
+""" should install plugin IdeaVim, IdeaVim-EasyMotion, IdeaVimExtension
+
 let mapleader=" "
 
 nnoremap \e :e  ~/.ideavimrc<CR>
@@ -45,8 +47,8 @@ set smartindent
 set expandtab
 set smarttab
 
-set clipboard+=unnamed
-set clipboard+=ideaput
+set clipboard=unnamedplus,ideaput
+inoremap <C-v> <C-r>+
 
 map H _
 map L $

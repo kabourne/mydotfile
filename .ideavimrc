@@ -49,6 +49,7 @@ set smarttab
 
 set clipboard=unnamedplus,ideaput
 inoremap <C-v> <C-r>+
+cnoremap <C-v> <C-r>+
 
 map H _
 map L $

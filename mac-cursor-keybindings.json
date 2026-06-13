@@ -188,12 +188,12 @@
     {
         "key": "space e",
         "command": "workbench.action.focusFirstEditorGroup",
-        "when": "sideBarFocus && !inputFocus"
+        "when": "filesExplorerFocus && !inputFocus"
     },
     {
         "key": "space v",
         "command": "workbench.action.toggleSidebarVisibility",
-        "when": "sideBarFocus && !inputFocus"
+        "when": "filesExplorerFocus && !inputFocus"
     },
     // disable default bindings
     {

@@ -125,8 +125,8 @@ nnoremap gt :action GotoTest<CR>
 " ==================== 重构与代码操作 ====================
 nnoremap == :action ReformatCode<CR>
 nnoremap -- :action OptimizeImports<CR>
-nnoremap <leader>rn :action RenameElement<CR>
-vnoremap <leader>rm :action RefactoringMenu<CR>
+nmap <leader>n <Action>(RenameElement)
+vmap <leader>x <Action>(RefactoringMenu)
 
 " ==================== Debug 模式 ====================
 nnoremap <leader>dd :action Debug<CR>

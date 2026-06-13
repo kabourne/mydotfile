@@ -40,7 +40,7 @@
                 "r"
             ],
             "commands": [
-                "workbench.action.quickOpenRecent"
+                "workbench.action.quickOpenNavigateNextInFilePicker"
             ]
         },
         {
@@ -847,38 +847,6 @@
         },
         {
             "before": [
-                "<leader>",
-                "a",
-                "h"
-            ],
-            "commands": [
-                "cursorai.action.generateInTerminal"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "a",
-                "c"
-            ],
-            "commands": [
-                "aichat.insertselectionintochat",
-                "aichat.append 'Please explain this'",
-                "aichat.submit"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "a",
-                "p"
-            ],
-            "commands": [
-                "composer.sendToAgent"
-            ]
-        },
-        {
-            "before": [
                 ">"
             ],
             "after": [
@@ -908,15 +876,6 @@
                 "editor.action.triggerSuggest"
             ],
             "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
-        },
-        {
-            "before": [
-                "<C-j>"
-            ],
-            "commands": [
-                "editor.action.inlineSuggest.trigger"
-            ],
-            "when": "config.github.copilot.inlineSuggest.enable && editorTextFocus && !editorHasSelection && !inlineSuggestionsVisible"
         }
     ],
     "vim.operatorPendingModeKeyBindingsNonRecursive": [

@@ -483,29 +483,6 @@
         {
             "before": [
                 "<leader>",
-                "a",
-                "p"
-            ],
-            "commands": [
-                "inlineChat.start"
-            ],
-            "when": "editorFocus && inlineChatHasProvider && inlineChatPossible && !editorReadonly"
-        },
-        {
-            "before": [
-                "<leader>",
-                "a",
-                "m"
-            ],
-            "commands": [
-                "github.copilot.terminal.generateCommitMessage",
-                "workbench.action.terminal.focus"
-            ],
-            "when": "editorTextFocus"
-        },
-        {
-            "before": [
-                "<leader>",
                 "n"
             ],
             "commands": [
@@ -755,83 +732,6 @@
             "commands": [
                 "workbench.action.debug.start"
             ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "d",
-                "c"
-            ],
-            "commands": [
-                "workbench.action.debug.continue"
-            ],
-            "when": "debugState == 'stopped'"
-        },
-        {
-            "before": [
-                "<leader>",
-                "d",
-                "s"
-            ],
-            "commands": [
-                "workbench.action.debug.stop"
-            ],
-            "when": "inDebugMode && !focusedSessionIsAttach"
-        },
-        {
-            "before": [
-                "<leader>",
-                "d",
-                "n"
-            ],
-            "commands": [
-                "workbench.action.debug.stepOver"
-            ],
-            "when": "debugState == 'stopped'"
-        },
-        {
-            "before": [
-                "<leader>",
-                "d",
-                "i"
-            ],
-            "commands": [
-                "workbench.action.debug.stepInto"
-            ],
-            "when": "debugState != 'inactive'"
-        },
-        {
-            "before": [
-                "<leader>",
-                "d",
-                "o"
-            ],
-            "commands": [
-                "workbench.action.debug.stepOut"
-            ],
-            "when": "debugState == 'stopped'"
-        },
-        {
-            "before": [
-                "<leader>",
-                "d",
-                "b"
-            ],
-            "commands": [
-                "editor.debug.action.toggleBreakpoint"
-            ],
-            "when": "debuggersAvailable && disassemblyViewFocus || debuggersAvailable && editorTextFocus"
-        },
-        {
-            "before": [
-                "<leader>",
-                "g",
-                "h"
-            ],
-            "commands": [
-                "testing.showMostRecentOutput"
-            ],
-            "when": ""
         }
     ],
     "vim.visualModeKeyBindingsNonRecursive": [

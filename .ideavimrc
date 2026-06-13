@@ -1,159 +1,165 @@
-""" should install plugin IdeaVim, IdeaVim-EasyMotion, IdeaVimExtension
+""" 推荐安装的插件: IdeaVim, IdeaVim-EasyMotion, IdeaVimExtension
 
 let mapleader=" "
-
-nnoremap \e :e  ~/.ideavimrc<CR>
-nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
-
-map Q gq
 noremap <SPACE> <Nop>
 
-filetype on
-filetype plugin on
-filetype indent on
-set matchit
-set keep-english-in-normal-and-restore-in-insert
-set commentary
-set surround
-Plug 'dbakker/vim-paragraph-motion'
-Plug 'michaeljsmith/vim-indent-object'
-Plug 'kana/vim-textobj-entire'
+" ==================== 基础与系统设置 ====================
+" 重新加载配置
+nnoremap \e :e ~/.ideavimrc<CR>
+nnoremap \r :source ~/.ideavimrc<CR>
 
-set modeline
-set modelines=12
-set relativenumber
 set number
 set scrolloff=5
-set ideamarks
-set ideajoin
-set idearefactormode=keep
-
-set encoding = 'utf-8'
-set fileencoding = 'utf-8'
-set fileformat = 'unix'
-
-set incsearch
-set hlsearch
 set ignorecase
 set smartcase
 set infercase
 set wildignorecase
-set nocompatible
+set incsearch
+set hlsearch
+" set relativenumber
 
-set breakindent
-set autoindent
-set smartindent
-
-set expandtab
-set smarttab
-
+" IdeaVim 专属特性
+set ideamarks
+set ideajoin
+set idearefactormode=keep
+set keep-english-in-normal-and-restore-in-insert
 set clipboard=unnamedplus,ideaput
+
+" 启用内置插件
+set commentary
+set surround
+set matchit
+Plug 'dbakker/vim-paragraph-motion'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'kana/vim-textobj-entire'
+
+" 剪贴板与寄存器映射
 inoremap <C-v> <C-r>+
 cnoremap <C-v> <C-r>+
 
-map H _
-map L $
+" ==================== 视图与光标移动 ====================
+nnoremap Q gq
+nnoremap H _
+nnoremap L $
 
-map <C-d> <C-e><C-e><C-e><C-e>
-map <C-u> <C-y><C-y><C-y><C-y>
-map <C-j> jj
-map <C-k> kk
+" 快速取消高亮
+nnoremap <BS><BS> :noh<CR>
+nnoremap ,<CR> :noh<CR>
 
-map [m <Action>(MethodUp)
-map ]m <Action>(MethodDown)
-map g; <Action>(JumpToLastChange)
-map g, <Action>(JumpToNextChange)
+" 代码折叠
+nnoremap zc :action CollapseRegion<CR>
+nnoremap zo :action ExpandRegion<CR>
+nnoremap zC :action CollapseAllRegions<CR>
+nnoremap zO :action ExpandAllRegions<CR>
 
-map zc <Action>(CollapseRegion)
-map zo <Action>(ExpandRegion)
-map zC <Action>(CollapseAllRegions)
-map zO <Action>(ExpandAllRegions)
+" 历史修改跳转
+nnoremap g; :action JumpToLastChange<CR>
+nnoremap g, :action JumpToNextChange<CR>
 
-map <BS><BS> :noh<CR>
-map ,<CR> :noh<CR>
+" 方法与错误跳转
+nnoremap [m :action MethodUp<CR>
+nnoremap ]m :action MethodDown<CR>
+nnoremap [s :action GotoPreviousError<CR>
+nnoremap ]s :action GotoNextError<CR>
 
-map <C-n> <Down>
-map <C-p> <Up>
+" ==================== 窗口与标签页管理 ====================
+" 标签页切换
+nnoremap <C-h> :action PreviousTab<CR>
+nnoremap <C-l> :action NextTab<CR>
+nnoremap <C-w> :action CloseContent<CR>
 
-map ,z <Action>(ToggleDistractionFreeMode)
-map <C-h> <Action>(PreviousTab)
-map <C-l> <Action>(NextTab)
-map <C-w> <Action>(CloseContent)
-map <leader>bo <Action>(CloseAllEditorsButActive)
-map <leader>bl <Action>(CloseAllToTheLeft)
-map <leader>br <Action>(CloseAllToTheRight)
+" 窗口分屏
+nnoremap sv :action SplitVertically<CR>
+nnoremap sh :action SplitHorizontally<CR>
+nnoremap sc :action Unsplit<CR>
+nnoremap so :action UnsplitAll<CR>
 
-map <leader>tc <Action>(ActivateTerminalToolWindow)
-
-map sv <Action>(SplitVertically)
-map sh <Action>(SplitHorizontally)
-map sc <Action>(Unsplit)
-map so <Action>(UnsplitAll)
-
+" 窗口间焦点切换 (使用 Vim 原生操作)
 nnoremap <leader>k <C-w>k
 nnoremap <leader>j <C-w>j
 nnoremap <leader>h <C-w>h
-nnoremap <leader>l <C-W>l
+nnoremap <leader>l <C-w>l
 
-map <C-p> <Action>(GotoFile)
-map <C-f> <Action>(FindInPath)
+" 关闭其他编辑器与界面开关
+nnoremap <leader>bo :action CloseAllEditorsButActive<CR>
+nnoremap <leader>bl :action CloseAllToTheLeft<CR>
+nnoremap <leader>br :action CloseAllToTheRight<CR>
+nnoremap <leader>tc :action ActivateTerminalToolWindow<CR>
+nnoremap ,z :action ToggleDistractionFreeMode<CR>
 
-map <C-i> <Action>(Forward)
-map <C-o> <Action>(Back)
+" ==================== 弹窗与文件检索 ====================
+nnoremap <leader>s :action FileStructurePopup<CR>
+" 显示最近打开的文件 (Recent Files)
+nnoremap <leader>e :action RecentFiles<CR>
+" 显示最近修改的文件 (Recent Changed Files)
+nnoremap <leader>c :action RecentChangedFiles<CR>
 
-map gd <Action>(GotoDeclaration)
-map gD <Action>(GotoTypeDeclaration)
-map gh <Action>(QuickJavaDoc)
-map gH <Action>(QuickAction)
-map gi <Action>(GotoImplementation)
-map gu <Action>(GotoSuperMethod)
-map gr <Action>(ShowUsages)
-map ga <Action>(ShowIntentionActions)
-map gn <Action>(Generate)
+" ==================== 插入与命令行模式导航 ====================
+" 在插入模式下使用 C-j 和 C-k 替代上下方向键（完美支持代码补全列表）
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
 
-nnoremap == :action ReformatCode<CR>
-nnoremap -- :action OptimizeImports <CR>
-nnoremap <leader>rn :action RenameElement<CR>
-vmap <leader>rm :action RefactoringMenu<CR>
+" 在 Vim 命令行模式下（按 : 后）使用 C-j 和 C-k 浏览历史
+cnoremap <C-j> <Down>
+cnoremap <C-k> <Up>
 
-map sn <Action>(GotoNextError)
-map sp <Action>(GotoPreviousError)
-map ]s <Action>(GotoNextError)
-map [s <Action>(GotoPreviousError)
+" ==================== 搜索与导航 ====================
+nnoremap <C-p> :action GotoFile<CR>
+nnoremap <C-f> :action FindInPath<CR>
+nnoremap <C-i> :action Forward<CR>
+nnoremap <C-o> :action Back<CR>
 
-map gt <Action>(GotoTest)
-
-nnoremap zd :action Debug<CR>
-
-nmap zc :action Resume<CR>
-nmap ze :action Stop<CR>
-nmap zj :action StepOver<CR>
-nmap zi :action StepInto<CR>
-nmap zo :action StepOut<CR>
-nmap zt <Action>(ToggleLineBreakpoint)
-
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gD :action GotoTypeDeclaration<CR>
+nnoremap gh :action QuickJavaDoc<CR>
+nnoremap gH :action QuickAction<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gu :action GotoSuperMethod<CR>
+nnoremap gr :action ShowUsages<CR>
+nnoremap ga :action ShowIntentionActions<CR>
+nnoremap gn :action Generate<CR>
+nnoremap gt :action GotoTest<CR>
 nnoremap <leader>p :action SelectInProjectView<CR>
 
+" ==================== 重构与代码操作 ====================
+nnoremap == :action ReformatCode<CR>
+nnoremap -- :action OptimizeImports<CR>
+nnoremap <leader>rn :action RenameElement<CR>
+vnoremap <leader>rm :action RefactoringMenu<CR>
+
+" ==================== Debug 模式 ====================
+nnoremap <leader>dd :action Debug<CR>
+nnoremap <leader>dc :action Resume<CR>
+nnoremap <leader>ds :action Stop<CR>
+nnoremap <leader>dn :action StepOver<CR>
+nnoremap <leader>di :action StepInto<CR>
+nnoremap <leader>do :action StepOut<CR>
+nnoremap <leader>db :action ToggleLineBreakpoint<CR>
+
+" ==================== 侧边栏 ====================
 Plug 'nerdtree'
 nnoremap <leader>m :NERDTree<CR>
-nnoremap <Tab> :NERDTree<CR>
 
+" ==================== 扩展插件配置 ====================
 Plug 'vim-scripts/argtextobj.vim'
 let g:argtextobj_pairs="(:),{:},<:>"
 
+" WhichKey
 set which-key
 let g:WhichKey_FontSize = 16
 set notimeout
 
+" Highlighted Yank
 Plug 'machakann/vim-highlightedyank'
 let g:highlightedyank_highlight_duration = "600"
 
+" EasyMotion
 Plug 'easymotion/vim-easymotion'
-map f <Plug>(easymotion-f)
-map F <Plug>(easymotion-F)
-map t <Plug>(easymotion-t)
-map T <Plug>(easymotion-T)
-map gj <Plug>(easymotion-j)
-map gk <Plug>(easymotion-k)
-map gw <Plug>(easymotion-w)
-map gb <Plug>(easymotion-b)
+nmap f <Plug>(easymotion-f)
+nmap F <Plug>(easymotion-F)
+nmap t <Plug>(easymotion-t)
+nmap T <Plug>(easymotion-T)
+nmap gj <Plug>(easymotion-j)
+nmap gk <Plug>(easymotion-k)
+nmap gw <Plug>(easymotion-w)
+nmap gb <Plug>(easymotion-b)

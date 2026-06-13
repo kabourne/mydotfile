@@ -1,6 +1,6 @@
 """ 推荐安装的插件: IdeaVim, IdeaVim-EasyMotion, IdeaVimExtension  
 """ IDEA keymap, Down->Ctrl+j, Up->Ctrl+k, Code Completion Basic -> Ctrl+n
-“”“ IDEA keymap, Hide Active Tool Window -> Space+v
+""" IDEA keymap, Hide Active Tool Window -> Space+v
 
 let mapleader=" "
 noremap <SPACE> <Nop>

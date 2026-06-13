@@ -1,4 +1,5 @@
-""" 推荐安装的插件: IdeaVim, IdeaVim-EasyMotion
+""" 推荐安装的插件: IdeaVim, IdeaVim-EasyMotion, IdeaVimExtension
+""" IDEA keymap, Down->Ctrl+j, Up->Ctrl+k, Code Completion Basic -> Ctrl+n
 
 let mapleader=" "
 noremap <SPACE> <Nop>

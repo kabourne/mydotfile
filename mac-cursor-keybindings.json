@@ -34,11 +34,6 @@
         "command": "workbench.action.quickOpenSelectNext",
         "when": "inQuickOpen"
     },
-    {
-        "key": "ctrl+j",
-        "command": "workbench.action.terminal.focusNext",
-        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
-    },
     // Up Motion
     {
         "key": "ctrl+k",
@@ -64,11 +59,6 @@
         "key": "ctrl+k",
         "command": "workbench.action.quickOpenSelectPrevious",
         "when": "inQuickOpen"
-    },
-    {
-        "key": "ctrl+k",
-        "command": "workbench.action.terminal.focusPrevious",
-        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
     },
 
     //
@@ -155,11 +145,11 @@
         }
     },
     {
-        "key": "shift-p",
+        "key": "shift+p",
         "command": "runCommands",
         "args": {
             "commands": [
-                "list.focusParent",
+                "list.focusParent"
             ]
         },
         "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !inputFocus"
@@ -194,10 +184,6 @@
         "key": "space l",
         "command": "workbench.action.focusFirstEditorGroup",
         "when": "filesExplorerFocus && !inputFocus"
-    },
-    {
-        "key": "shift shift",
-        "command": "workbench.action.toggleSidebarVisibility"
     },
     // disable default bindings
     {

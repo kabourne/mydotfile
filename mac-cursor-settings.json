@@ -27,6 +27,7 @@
     "vim.visualstar": true,
     "vim.autoindent": true,
     "vim.ignorecase": true,
+    "vim.smartcase": true,
     "vim.surround": true,
     "vim.highlightedyank.enable": true,
     "vim.highlightedyank.duration": 500,
@@ -39,7 +40,43 @@
                 "e"
             ],
             "commands": [
-                "workbench.action.focusSideBar"
+                "workbench.action.openRecent"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "s"
+            ],
+            "commands": [
+                "workbench.action.gotoSymbol"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "c"
+            ],
+            "commands": [
+                "workbench.view.scm"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "m"
+            ],
+            "commands": [
+                "workbench.view.explorer"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "M"
+            ],
+            "commands": [
+                "workbench.action.toggleSidebarVisibility"
             ]
         },
         {
@@ -72,31 +109,13 @@
         },
         {
             "before": [
-                "<leader>",
+                ",",
                 "z"
             ],
             "commands": [
                 "workbench.action.toggleZenMode"
             ],
             "when": "!isAuxiliaryWindowFocusedContext"
-        },
-        {
-            "before": [
-                "="
-            ],
-            "commands": [
-                "editor.action.smartSelect.expand"
-            ],
-            "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
-        },
-        {
-            "before": [
-                "-"
-            ],
-            "commands": [
-                "editor.action.smartSelect.shrink"
-            ],
-            "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
         },
         {
             "before": [
@@ -125,6 +144,60 @@
             ],
             "commands": [
                 ":nohl"
+            ]
+        },
+        {
+            "before": [
+                "Q"
+            ],
+            "after": [
+                "g",
+                "q"
+            ]
+        },
+        {
+            "before": [
+                "<BS>",
+                "<BS>"
+            ],
+            "commands": [
+                ":nohl"
+            ]
+        },
+        {
+            "before": [
+                "z",
+                "c"
+            ],
+            "commands": [
+                "editor.fold"
+            ]
+        },
+        {
+            "before": [
+                "z",
+                "o"
+            ],
+            "commands": [
+                "editor.unfold"
+            ]
+        },
+        {
+            "before": [
+                "z",
+                "C"
+            ],
+            "commands": [
+                "editor.foldAll"
+            ]
+        },
+        {
+            "before": [
+                "z",
+                "O"
+            ],
+            "commands": [
+                "editor.unfoldAll"
             ]
         },
         {
@@ -185,8 +258,8 @@
         },
         {
             "before": [
-                "g",
-                "k"
+                "[",
+                "s"
             ],
             "commands": [
                 "editor.action.marker.prevInFiles"
@@ -195,8 +268,8 @@
         },
         {
             "before": [
-                "g",
-                "j"
+                "]",
+                "s"
             ],
             "commands": [
                 "editor.action.marker.nextInFiles"
@@ -265,6 +338,50 @@
         },
         {
             "before": [
+                "g",
+                "j"
+            ],
+            "after": [
+                "<leader>",
+                "<leader>",
+                "j"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "k"
+            ],
+            "after": [
+                "<leader>",
+                "<leader>",
+                "k"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "w"
+            ],
+            "after": [
+                "<leader>",
+                "<leader>",
+                "w"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "b"
+            ],
+            "after": [
+                "<leader>",
+                "<leader>",
+                "b"
+            ]
+        },
+        {
+            "before": [
                 "e"
             ],
             "after": [
@@ -319,8 +436,7 @@
                 "i"
             ],
             "commands": [
-                "editor.action.goToImplementation",
-                "explorer.openAndPassFocus"
+                "editor.action.goToImplementation"
             ],
             "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
         },
@@ -340,8 +456,7 @@
                 "u"
             ],
             "commands": [
-                "java.action.navigateToSuperImplementation",
-                "explorer.openAndPassFocus"
+                "java.action.navigateToSuperImplementation"
             ],
             "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
         },
@@ -357,8 +472,18 @@
         },
         {
             "before": [
+                "g",
+                "H"
+            ],
+            "commands": [
+                "editor.action.quickFix"
+            ],
+            "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+        },
+        {
+            "before": [
                 "<leader>",
-                "c",
+                "a",
                 "p"
             ],
             "commands": [
@@ -369,7 +494,7 @@
         {
             "before": [
                 "<leader>",
-                "c",
+                "a",
                 "m"
             ],
             "commands": [
@@ -425,6 +550,31 @@
             ],
             "commands": [
                 "workbench.action.quickTextSearch"
+            ]
+        },
+        {
+            "before": [
+                "<C-i>"
+            ],
+            "commands": [
+                "workbench.action.navigateForward"
+            ]
+        },
+        {
+            "before": [
+                "<C-o>"
+            ],
+            "commands": [
+                "workbench.action.navigateBack"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "p"
+            ],
+            "commands": [
+                "workbench.files.action.showActiveFileInExplorer"
             ]
         },
         {
@@ -572,7 +722,7 @@
         },
         {
             "before": [
-                "<space>",
+                "<leader>",
                 "k"
             ],
             "commands": [
@@ -581,7 +731,7 @@
         },
         {
             "before": [
-                "<space>",
+                "<leader>",
                 "j"
             ],
             "commands": [
@@ -590,7 +740,7 @@
         },
         {
             "before": [
-                "<space>",
+                "<leader>",
                 "h"
             ],
             "commands": [
@@ -599,11 +749,21 @@
         },
         {
             "before": [
-                "<space>",
+                "<leader>",
                 "l"
             ],
             "commands": [
                 "workbench.action.focusRightGroup"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "d",
+                "d"
+            ],
+            "commands": [
+                "workbench.action.debug.start"
             ]
         },
         {
@@ -621,7 +781,7 @@
             "before": [
                 "<leader>",
                 "d",
-                "e"
+                "s"
             ],
             "commands": [
                 "workbench.action.debug.stop"
@@ -632,7 +792,7 @@
             "before": [
                 "<leader>",
                 "d",
-                "j"
+                "n"
             ],
             "commands": [
                 "workbench.action.debug.stepOver"
@@ -665,33 +825,12 @@
             "before": [
                 "<leader>",
                 "d",
-                "t"
+                "b"
             ],
             "commands": [
                 "editor.debug.action.toggleBreakpoint"
             ],
             "when": "debuggersAvailable && disassemblyViewFocus || debuggersAvailable && editorTextFocus"
-        },
-        {
-            "before": [
-                "<leader>",
-                "d",
-                "T"
-            ],
-            "commands": [
-                "debug.removeBreakpoint"
-            ],
-            "when": "breakpointsFocused && !breakpointInputFocused"
-        },
-        {
-            "before": [
-                "<leader>",
-                "d",
-                "h"
-            ],
-            "commands": [
-                "editor.debug.action.selectionToRepl"
-            ]
         },
         {
             "before": [
@@ -764,7 +903,7 @@
         {
             "before": [
                 "<leader>",
-                "c",
+                "a",
                 "h"
             ],
             "commands": [
@@ -774,7 +913,7 @@
         {
             "before": [
                 "<leader>",
-                "c",
+                "a",
                 "c"
             ],
             "commands": [
@@ -786,41 +925,11 @@
         {
             "before": [
                 "<leader>",
-                "c",
+                "a",
                 "p"
             ],
             "commands": [
                 "composer.sendToAgent"
-            ]
-        },
-        {
-            "before": [
-                ">"
-            ],
-            "after": [
-                ">",
-                "g",
-                "v"
-            ]
-        },
-        {
-            "before": [
-                ">"
-            ],
-            "after": [
-                ">",
-                "g",
-                "v"
-            ]
-        },
-        {
-            "before": [
-                ">"
-            ],
-            "after": [
-                ">",
-                "g",
-                "v"
             ]
         },
         {

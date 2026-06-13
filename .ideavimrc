@@ -128,15 +128,6 @@ nnoremap -- :action OptimizeImports<CR>
 nmap <leader>n <Action>(RenameElement)
 vmap <leader>x <Action>(RefactoringMenu)
 
-" ==================== Debug 模式 ====================
-nnoremap <leader>dd :action Debug<CR>
-nnoremap <leader>dc :action Resume<CR>
-nnoremap <leader>ds :action Stop<CR>
-nnoremap <leader>dn :action StepOver<CR>
-nnoremap <leader>di :action StepInto<CR>
-nnoremap <leader>do :action StepOut<CR>
-nnoremap <leader>db :action ToggleLineBreakpoint<CR>
-
 " ==================== 侧边栏 ====================
 map <leader>e <Action>(SelectInProjectView)
 " 打开/聚焦 Project 侧边栏；关闭需在 IDE Keymap 里绑定 Hide Active Tool Window

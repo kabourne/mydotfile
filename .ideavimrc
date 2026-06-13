@@ -1,5 +1,6 @@
-""" 推荐安装的插件: IdeaVim, IdeaVim-EasyMotion, IdeaVimExtension
+""" 推荐安装的插件: IdeaVim, IdeaVim-EasyMotion, IdeaVimExtension  
 """ IDEA keymap, Down->Ctrl+j, Up->Ctrl+k, Code Completion Basic -> Ctrl+n
+“”“ IDEA keymap, Hide Active Tool Window -> Space+v
 
 let mapleader=" "
 noremap <SPACE> <Nop>
@@ -91,7 +92,7 @@ nnoremap ,z :action ToggleDistractionFreeMode<CR>
 " ==================== 弹窗与文件检索 ====================
 nnoremap <leader>s :action FileStructurePopup<CR>
 " 显示最近打开的文件 (Recent Files)
-nnoremap <leader>e :action RecentFiles<CR>
+map <leader>r <Action>(RecentFiles)
 " 显示最近修改的文件 (Recent Changed Files)
 nnoremap <leader>c :action RecentChangedFiles<CR>
 
@@ -120,7 +121,6 @@ nnoremap gr :action ShowUsages<CR>
 nnoremap ga :action ShowIntentionActions<CR>
 nnoremap gn :action Generate<CR>
 nnoremap gt :action GotoTest<CR>
-nnoremap <leader>p :action SelectInProjectView<CR>
 
 " ==================== 重构与代码操作 ====================
 nnoremap == :action ReformatCode<CR>
@@ -138,8 +138,9 @@ nnoremap <leader>do :action StepOut<CR>
 nnoremap <leader>db :action ToggleLineBreakpoint<CR>
 
 " ==================== 侧边栏 ====================
-Plug 'nerdtree'
-nnoremap <leader>m :NERDTree<CR>
+map <leader>e <Action>(SelectInProjectView)
+" 打开/聚焦 Project 侧边栏；关闭需在 IDE Keymap 里绑定 Hide Active Tool Window
+map <leader>v <Action>(ActivateProjectToolWindow)
 
 " ==================== 扩展插件配置 ====================
 Plug 'vim-scripts/argtextobj.vim'

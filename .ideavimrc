@@ -1,4 +1,4 @@
-""" 推荐安装的插件: IdeaVim, IdeaVim-EasyMotion, IdeaVimExtension
+""" 推荐安装的插件: IdeaVim, IdeaVim-EasyMotion
 
 let mapleader=" "
 noremap <SPACE> <Nop>
@@ -159,6 +159,8 @@ nmap f <Plug>(easymotion-f)
 nmap F <Plug>(easymotion-F)
 nmap t <Plug>(easymotion-t)
 nmap T <Plug>(easymotion-T)
+nmap w <Plug>(easymotion-w)
+nmap b <Plug>(easymotion-b)
 nmap gj <Plug>(easymotion-j)
 nmap gk <Plug>(easymotion-k)
 nmap gw <Plug>(easymotion-w)

@@ -37,10 +37,28 @@
         {
             "before": [
                 "<leader>",
+                "r"
+            ],
+            "commands": [
+                "workbench.action.quickOpenRecent"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
                 "e"
             ],
             "commands": [
-                "workbench.action.openRecent"
+                "workbench.files.action.showActiveFileInExplorer"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "v"
+            ],
+            "commands": [
+                "workbench.action.toggleSidebarVisibility"
             ]
         },
         {
@@ -59,24 +77,6 @@
             ],
             "commands": [
                 "workbench.view.scm"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "m"
-            ],
-            "commands": [
-                "workbench.view.explorer"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "M"
-            ],
-            "commands": [
-                "workbench.action.toggleSidebarVisibility"
             ]
         },
         {
@@ -506,7 +506,6 @@
         {
             "before": [
                 "<leader>",
-                "r",
                 "n"
             ],
             "commands": [
@@ -566,15 +565,6 @@
             ],
             "commands": [
                 "workbench.action.navigateBack"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "p"
-            ],
-            "commands": [
-                "workbench.files.action.showActiveFileInExplorer"
             ]
         },
         {
@@ -835,61 +825,6 @@
         {
             "before": [
                 "<leader>",
-                "n",
-                "t"
-            ],
-            "commands": [
-                "workbench.view.testing.focus"
-            ],
-            "when": ""
-        },
-        {
-            "before": [
-                "<leader>",
-                "n",
-                "r"
-            ],
-            "commands": [
-                "testing.runAtCursor"
-            ],
-            "when": "editorTextFocus"
-        },
-        {
-            "before": [
-                "<leader>",
-                "n",
-                "f"
-            ],
-            "commands": [
-                "testing.runCurrentFile"
-            ],
-            "when": "editorTextFocus"
-        },
-        {
-            "before": [
-                "<leader>",
-                "n",
-                "d"
-            ],
-            "commands": [
-                "testing.debugAtCursor"
-            ],
-            "when": ""
-        },
-        {
-            "before": [
-                "<leader>",
-                "n",
-                "s"
-            ],
-            "commands": [
-                "testing.stopContinuousRun"
-            ],
-            "when": ""
-        },
-        {
-            "before": [
-                "<leader>",
                 "g",
                 "h"
             ],
@@ -900,6 +835,16 @@
         }
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<leader>",
+                "x"
+            ],
+            "commands": [
+                "editor.action.refactor"
+            ],
+            "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+        },
         {
             "before": [
                 "<leader>",
